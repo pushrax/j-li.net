@@ -1,0 +1,202 @@
+body, html {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: url(http://j-li.net/image/noise.png) #222;
+	font-family: Karla, sans-serif;
+	color: #fff;
+	min-width: 370px;
+}
+a {
+	outline: none;
+	color: #bbb;
+	text-decoration: none;
+	-webkit-transition: color 150ms ease-in-out 0s;
+	-moz-transition: color 150ms ease-in-out 0s;
+	-o-transition: color 150ms ease-in-out 0s;
+	-ms-transition: color 150ms ease-in-out 0s;
+	transition: color 150ms ease-in-out 0s;
+}
+a:hover {
+	color: #fff;
+}
+.center-container {
+	float: left;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+}
+.center-outer {
+	clear: left;
+	float: left;
+	position: relative;
+	left: 50%;
+}
+.center-inner {
+	display: block;
+	float: left;
+	position: relative;
+	right: 50%;
+}
+#menubar {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-size:16px;
+	line-height: 40px;
+	height: 40px;
+	background: #850803;
+	background: -moz-linear-gradient(top, #850803 0%, #510202 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#850803), color-stop(100%,#510202));
+	background: -webkit-linear-gradient(top, #850803 0%,#510202 100%);
+	background: -o-linear-gradient(top, #850803 0%,#510202 100%);
+	background: -ms-linear-gradient(top, #850803 0%,#510202 100%);
+	background: linear-gradient(top, #850803 0%,#510202 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#850803', endColorstr='#510202',GradientType=0 );
+}
+#menubar ul {
+	margin: 0;
+	list-style: none;
+}
+#menubar ul li {
+	float: left;
+	padding: 0 0 0 16px;
+}
+#submenu {
+	margin: 0;
+	padding: 0;
+	text-shadow: 2px 2px 0.2em black;
+}
+#submenu ul {
+	list-style: none;
+}
+#submenu ul li {
+	float: left;
+	padding: 0 10px 0;
+	border-right: 1px dashed #888;
+}
+#submenu ul li.last {
+	border-right: none;
+}
+
+/* Front page specific */
+#bigname {
+	font-size: 80px;
+	font-weight: 800;
+	width: 480px;
+	margin: 0 auto 0;
+	padding: 180px 0 20px;
+	text-align: center;
+	text-shadow: 2px 2px 0.2em black;
+}
+#bigmenu {
+	font-size: 32px;
+	font-weight: 400;
+	min-width: 480px;
+	padding: 20px 0 0;
+	text-shadow: 2px 2px 0.2em black;
+}
+#bigmenu ul {
+	text-align: center;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+#bigmenu ul li {
+	padding: 0 20px 0;
+	margin: 0;
+	border-right: 1px dashed #888;
+}
+#bigmenu ul li.last {
+	border-right: none;
+}
+
+/* Projects page specific */
+#projects p {
+	margin-left: 20px;
+}
+#projects h3 {
+	padding-top: 20px;
+}
+
+/* Social media links (disabled currently) */
+#topSocial {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+}
+#topSocial ul {
+	list-style: none outside none;
+	padding: 0;
+	margin: 0;
+}
+#topSocial ul li {
+	float: left;
+	padding: 0 5px;
+	width: 50px;
+}
+#topSocial ul li a {
+	display: block;
+	height: 49px;
+	width: 49px;
+	text-indent: -9999px;
+	-webkit-transition: opacity 500ms;
+	-moz-transition: opacity 500ms;
+	-o-transition: opacity 500ms;
+	-ms-transition: opacity 500ms;
+	transition: opacity 500ms;
+}
+#topSocial ul li a.stackoverflow:hover, #topSocial ul li a.twitter:hover {
+	opacity: 0.0;
+	filter: alpha(opacity=0);
+}
+#topSocial ul li a.twitter {
+	background: url(http://j-li.net/image/ico_social_twitter.png) 0 0 no-repeat
+}
+#topSocial ul li.twitter {
+	background: url(http://j-li.net/image/ico_social_twitter.png) 5px -49px no-repeat
+}
+#topSocial ul li a.stackoverflow {
+	background: url(http://j-li.net/image/ico_social_stackoverflow.png) 0 0 no-repeat
+}
+#topSocial ul li.stackoverflow {
+	background: url(http://j-li.net/image/ico_social_stackoverflow.png) 5px -49px no-repeat
+}
+
+/* Powered by block (disabled currently) */
+#powered {
+	display:none;
+	position: fixed;
+	bottom: 20px;
+	left: 20px;
+}
+#powered ul {
+	list-style: none outside none;
+	padding: 0;
+	margin: 0;
+}
+#powered ul li {
+	float: left;
+	width: 196px;
+}
+#powered ul li a {
+	width: 196px;
+	height: 61px;
+	display: block;
+	-webkit-transition: opacity 500ms;
+	-moz-transition: opacity 500ms;
+	-o-transition: opacity 500ms;
+	-ms-transition: opacity 500ms;
+	transition: opacity 500ms;
+}
+#powered ul li a.nodejs:hover {
+	opacity: 0.0;
+	filter: alpha(opacity=0);
+}
+#powered ul li.nodejs {
+	background: url(http://xit.so/image/nodejs-dark.png) 0 0 no-repeat
+}
+#powered ul li a.nodejs {
+	background: url(http://xit.so/image/nodejs-dark2.png) 0 0 no-repeat
+}

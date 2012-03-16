@@ -1,0 +1,42 @@
+!!!
+html
+  head
+    case title
+      when ''
+        title j-li.net
+      default
+        title #{title} >> j-li.net
+    
+    //- To use WebPutty, uncomment the next line
+    //-link(rel='stylesheet', type='text/css', href='//webputty.commondatastorage.googleapis.com/agtzfmNzc2ZpZGRsZXIMCxIEUGFnZRjUtjwM.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/main.css')
+    link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Karla:400,700')
+
+  body
+    
+    div#menubar
+      ul
+        li: a(href='/') home
+        li: a(href='http://twitter.com/jli1', title='@jli1 on Twitter') twitter
+        li: a(href='http://stackoverflow.com/users/888641/jli', title='jli on Stack Overflow') stackoverflow
+        li: a(href='http://github.com/j1i', title='j1i on Github') github
+        
+    - if (title != '')
+      div#submenu.center-container
+        div.center-outer
+          ul.center-inner
+            li: a(href='/projects') projects
+            li: a(href='/resume') resume
+            li.last: a(href='/contact') contact
+        
+    //-div#topSocial
+      ul
+        li.twitter: a.twitter(href='http://twitter.com/jli1', title='Follow on Twitter')
+        li.stackoverflow: a.stackoverflow(href='http://stackoverflow.com/users/888641/jli', title='StackOverflow Account')
+    
+    div#powered
+      ul
+        li.nodejs
+          a.nodejs(href='http://nodejs.org/')
+    
+    div#content!= body
