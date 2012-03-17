@@ -18,4 +18,8 @@ module.exports = function(app){
 	app.get('/contact', function(req, res) {
 		res.render('contact', { title: 'Contact' });
 	});
+
+	app.get('/music', function(req, res) {
+		res.render('music', { title: 'Music' });
+	});
 };

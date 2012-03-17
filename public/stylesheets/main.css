@@ -79,12 +79,24 @@ a:hover {
 #submenu ul li.last {
 	border-right: none;
 }
+#submenu ul.projects .projects a{
+	color: #fff;
+}
+#submenu ul.resume .resume a{
+	color: #fff;
+}
+#submenu ul.contact .contact a{
+	color: #fff;
+}
+#submenu ul.music .music a{
+	color: #fff;
+}
 
 /* Front page specific */
 #bigname {
 	font-size: 80px;
 	font-weight: 800;
-	width: 480px;
+	width: 600px;
 	margin: 0 auto 0;
 	padding: 180px 0 20px;
 	text-align: center;
@@ -93,7 +105,7 @@ a:hover {
 #bigmenu {
 	font-size: 32px;
 	font-weight: 400;
-	min-width: 480px;
+	min-width: 600px;
 	padding: 20px 0 0;
 	text-shadow: 2px 2px 0.2em black;
 }
@@ -118,6 +130,17 @@ a:hover {
 }
 #projects h3 {
 	padding-top: 20px;
+}
+
+/* Music page specific */
+#music {
+	width: 960px;
+	margin: 0 auto 0;
+}
+
+#music span {
+	margin-bottom: 50px;
+	display: block;
 }
 
 /* Social media links (disabled currently) */

@@ -21,13 +21,15 @@ html
         li: a(href='http://stackoverflow.com/users/888641/jli', title='jli on Stack Overflow') stackoverflow
         li: a(href='http://github.com/j1i', title='j1i on Github') github
         
+    - var titleLower = title.toLowerCase();
     - if (title != '')
       div#submenu.center-container
         div.center-outer
-          ul.center-inner
-            li: a(href='/projects') projects
-            li: a(href='/resume') resume
-            li.last: a(href='/contact') contact
+          ul.center-inner(class=titleLower)
+            li.projects: a(href='/projects') projects
+            li.music: a(href='/music') music
+            li.resume: a(href='/resume') resume
+            li.contact.last: a(href='/contact') contact
         
     //-div#topSocial
       ul
