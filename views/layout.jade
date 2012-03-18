@@ -1,5 +1,5 @@
 !!!
-html
+html.no-js
   head
     case title
       when ''
@@ -10,35 +10,40 @@ html
     //- To use WebPutty, uncomment the next line
     //-link(rel='stylesheet', type='text/css', href='//webputty.commondatastorage.googleapis.com/agtzfmNzc2ZpZGRsZXIMCxIEUGFnZRjUtjwM.css')
     link(rel='stylesheet', type='text/css', href='/stylesheets/main.css')
-    link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Karla:400,700')
+    link(rel='stylesheet', type='text/css', href='//fonts.googleapis.com/css?family=Karla:400,700')
+    script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
+    script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js')
+    script(type='text/javascript', src='/scripts/main.js')
 
   body
-    
+
     div#menubar
       ul
-        li: a(href='/') home
+        li: a.ajaxlink(href='/') home
         li: a(href='http://twitter.com/jli1', title='@jli1 on Twitter') twitter
         li: a(href='http://stackoverflow.com/users/888641/jli', title='jli on Stack Overflow') stackoverflow
         li: a(href='http://github.com/j1i', title='j1i on Github') github
-        
-    - var titleLower = title.toLowerCase();
-    - if (title != '')
-      div#submenu.center-container
-        div.center-outer
-          ul.center-inner(class=titleLower)
-            li.projects: a(href='/projects') projects
-            li.music: a(href='/music') music
-            li.resume: a(href='/resume') resume
-            li.contact.last: a(href='/contact') contact
-        
+      
+
+      - var hiddenClass = '';
+      - if (view == 'index') hiddenClass = 'nodisplay';
+
+      div#submenu.center-container(class=hiddenClass)
+        include submenu
+      
+      
     //-div#topSocial
       ul
         li.twitter: a.twitter(href='http://twitter.com/jli1', title='Follow on Twitter')
         li.stackoverflow: a.stackoverflow(href='http://stackoverflow.com/users/888641/jli', title='StackOverflow Account')
     
+
+
     div#powered
       ul
         li.nodejs
           a.nodejs(href='http://nodejs.org/')
     
+
     div#content!= body
+

@@ -10,7 +10,7 @@ body {
 }
 a {
 	outline: none;
-	color: #bbb;
+	color: #aaa;
 	text-decoration: none;
 	-webkit-transition: color 150ms ease-in-out 0s;
 	-moz-transition: color 150ms ease-in-out 0s;
@@ -20,6 +20,9 @@ a {
 }
 a:hover {
 	color: #fff;
+}
+.nodisplay {
+	display: none;
 }
 .center-container {
 	float: left;
@@ -61,34 +64,31 @@ a:hover {
 }
 #menubar ul li {
 	float: left;
-	padding: 0 0 0 16px;
+	padding: 0 12px 0;
 }
 #submenu {
-	margin: 0;
+	margin: 10px 0 0;
 	padding: 0;
 	text-shadow: 2px 2px 0.2em black;
 }
 #submenu ul {
 	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 #submenu ul li {
 	float: left;
-	padding: 0 10px 0;
-	border-right: 1px dashed #888;
+	margin: 0;
+	padding: 0;
 }
-#submenu ul li.last {
+#submenu ul li a {
+	padding: 0 20px 0;
+	border-right: 1px dashed #777;
+}
+#submenu ul li.last a {
 	border-right: none;
 }
-#submenu ul.projects .projects a{
-	color: #fff;
-}
-#submenu ul.resume .resume a{
-	color: #fff;
-}
-#submenu ul.contact .contact a{
-	color: #fff;
-}
-#submenu ul.music .music a{
+#submenu .active a {
 	color: #fff;
 }
 
@@ -116,9 +116,10 @@ a:hover {
 	margin: 0;
 }
 #bigmenu ul li {
+	float: left;
 	padding: 0 20px 0;
 	margin: 0;
-	border-right: 1px dashed #888;
+	border-right: 1px dashed #777;
 }
 #bigmenu ul li.last {
 	border-right: none;

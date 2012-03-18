@@ -1,0 +1,9 @@
+div.center-outer
+  ul.center-inner
+    each item in menuItems
+      - var ajcl = ''
+      - if (item.ajax) ajcl = 'ajaxlink'
+      - if (item.name == view)
+        li.active(class=item.name): a(class=ajcl, href=item.path) #{item.name}
+      - else
+        li(class=item.name): a(class=ajcl, href=item.path) #{item.name}
