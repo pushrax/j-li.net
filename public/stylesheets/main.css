@@ -88,7 +88,7 @@ a:hover {
 #submenu ul li.last a {
 	border-right: none;
 }
-#submenu .active a {
+#submenu a.active {
 	color: #fff;
 }
 

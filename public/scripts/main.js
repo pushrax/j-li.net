@@ -4,13 +4,13 @@ function openPage(path, updateHistory) {
 	}
 	
 	$('#content').fadeOut(100, function() {
-		$.getJSON(path, function(data) {
+		$.getJSON(path + "?ajax", function(data) {
 			if (data.view == 'index') $('#submenu').fadeOut(500);
 			else $('#submenu').fadeIn(500);
 			
 			$('#content').html(data.html).fadeIn(100);
-			$('#submenu li').removeClass('active');
-			$('#submenu li.' + data.view).addClass('active');
+			$('#submenu li a').removeClass('active');
+			$('#submenu li a.' + data.view).addClass('active');
 			
 			updateClickHandlers();
 			if (data.title !== '') document.title = data.title + ' >> j-li.net';
