@@ -3,7 +3,7 @@ body, html {
 	padding: 0;
 }
 body {
-	background: url(http://j-li.net/image/noise.png) #222;
+	background: url(/image/noise.png) #222;
 	font-family: Karla, sans-serif;
 	color: #fff;
 	min-width: 370px;
@@ -176,16 +176,16 @@ a:hover {
 	filter: alpha(opacity=0);
 }
 #topSocial ul li a.twitter {
-	background: url(http://j-li.net/image/ico_social_twitter.png) 0 0 no-repeat
+	background: url(/image/ico_social_twitter.png) 0 0 no-repeat
 }
 #topSocial ul li.twitter {
-	background: url(http://j-li.net/image/ico_social_twitter.png) 5px -49px no-repeat
+	background: url(/image/ico_social_twitter.png) 5px -49px no-repeat
 }
 #topSocial ul li a.stackoverflow {
-	background: url(http://j-li.net/image/ico_social_stackoverflow.png) 0 0 no-repeat
+	background: url(/image/ico_social_stackoverflow.png) 0 0 no-repeat
 }
 #topSocial ul li.stackoverflow {
-	background: url(http://j-li.net/image/ico_social_stackoverflow.png) 5px -49px no-repeat
+	background: url(/image/ico_social_stackoverflow.png) 5px -49px no-repeat
 }
 
 /* Powered by block (disabled currently) */
@@ -219,8 +219,8 @@ a:hover {
 	filter: alpha(opacity=0);
 }
 #powered ul li.nodejs {
-	background: url(http://xit.so/image/nodejs-dark.png) 0 0 no-repeat
+	background: url(/image/nodejs-dark.png) 0 0 no-repeat
 }
 #powered ul li a.nodejs {
-	background: url(http://xit.so/image/nodejs-dark2.png) 0 0 no-repeat
+	background: url(/image/nodejs-dark2.png) 0 0 no-repeat
 }
