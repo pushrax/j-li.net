@@ -83,10 +83,10 @@ a:hover {
 }
 #submenu ul li a {
 	padding: 0 20px 0;
-	border-right: 1px dashed #777;
+	border-left: 1px dashed #777;
 }
-#submenu ul li.last a {
-	border-right: none;
+#submenu ul li:first-child a {
+	border-left: none;
 }
 #submenu a.active {
 	color: #fff;
@@ -119,10 +119,10 @@ a:hover {
 	float: left;
 	padding: 0 20px 0;
 	margin: 0;
-	border-right: 1px dashed #777;
+	border-left: 1px dashed #777;
 }
-#bigmenu ul li.last {
-	border-right: none;
+#bigmenu ul li:first-child {
+	border-left: none;
 }
 
 /* Projects page specific */
