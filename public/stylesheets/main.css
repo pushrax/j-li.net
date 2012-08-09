@@ -8,6 +8,8 @@ body {
 	color: #fff;
 	min-width: 370px;
 }
+::-moz-selection{ background: #d91e76; color:#fff; text-shadow: none; }
+::selection { background:#d91e76; color:#fff; text-shadow: none; }
 a {
 	outline: none;
 	color: #aaa;
