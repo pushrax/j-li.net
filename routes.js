@@ -7,13 +7,16 @@ module.exports = function(app) {
 		require('./' + file.substr(0, file.indexOf('.')))(app);
 	});*/
 
-	function renderPage(req, res, view, title) {
+	function renderPage(req, res, view) {
 		var menuItems = [
 			{ name: 'projects', path: '/projects', ajax: true },
 			{ name: 'music', path: '/music', ajax: true },
 			{ name: 'resume', path: '/resume', ajax: false },
 			{ name: 'contact', path: '/contact', ajax: true }
 		];
+
+		var title = view;
+		if (view == 'index') title = '';
 		
 		var ajaxRequest = (typeof req.query['ajax'] !== "undefined");
 		if (req.xhr || ajaxRequest) {
@@ -26,18 +29,18 @@ module.exports = function(app) {
 	}
 	
 	app.get('/', function(req, res) {
-		renderPage(req, res, 'index', '');
+		renderPage(req, res, 'index');
 	});
 
 	app.get('/projects', function(req, res) {
-		renderPage(req, res, 'projects', 'Projects');
+		renderPage(req, res, 'projects');
 	});
 
 	app.get('/contact', function(req, res) {
-		renderPage(req, res, 'contact', 'Contact');
+		renderPage(req, res, 'contact');
 	});
 
 	app.get('/music', function(req, res) {
-		renderPage(req, res, 'music', 'Music');
+		renderPage(req, res, 'music');
 	});
 };

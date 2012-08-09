@@ -5,11 +5,12 @@ html.no-js
       when ''
         title j-li.net
       default
-        title #{title} >> j-li.net
+        title #{title.toLowerCase()} >> j-li.net
     
     //- To use WebPutty, uncomment the next line
     //-link(rel='stylesheet', type='text/css', href='//webputty.commondatastorage.googleapis.com/agtzfmNzc2ZpZGRsZXIMCxIEUGFnZRjUtjwM.css')
     link(rel='stylesheet', type='text/css', href='/stylesheets/main.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/font-awesome.css')
     link(rel='stylesheet', type='text/css', href='//fonts.googleapis.com/css?family=Karla:400,700')
     script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
     script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js')
@@ -19,10 +20,18 @@ html.no-js
 
     div#menubar
       ul
-        li: a.ajaxlink(href='/') home
-        li: a(href='http://twitter.com/jli1', title='@jli1 on Twitter') twitter
-        li: a(href='http://stackoverflow.com/users/888641/jli', title='jli on Stack Overflow') stackoverflow
-        li: a(href='http://github.com/j1i', title='j1i on Github') github
+        li: a.ajaxlink(href='/')
+          i.icon-home
+          |  home
+        li: a(href='http://twitter.com/jli1', title='@jli1 on Twitter')
+          i.icon-twitter
+          |  twitter
+        li: a(href='http://stackoverflow.com/users/888641/jli', title='jli on Stack Overflow')
+          i.icon-sitemap
+          |  stackoverflow
+        li: a(href='http://github.com/j1i', title='j1i on Github')
+          i.icon-github
+          |  github
       
 
     - var hiddenClass = '';
