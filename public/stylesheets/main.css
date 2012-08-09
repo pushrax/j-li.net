@@ -135,6 +135,9 @@ a:hover {
 #projects h3 {
 	padding-top: 20px;
 }
+#projects>ul>li {
+	margin-bottom: 14px;
+}
 
 /* Music page specific */
 #music {
