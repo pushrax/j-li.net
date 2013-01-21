@@ -1,0 +1,72 @@
+.ms-font-size(@scale, @font-size: @base-font-size, @line-height: @base-line-height) when (@scale = 0) {
+  font-size: @font-size;
+  line-height: @font-size * @line-height;
+}
+
+.ms-font-size(@scale, @font-size: @base-font-size, @line-height: @base-line-height, @scale-factor: @scale-factor) {
+  // TODO: do this without inline JS?
+  @calculated-font-size: round(@font-size * (~`Math.pow("@{scale-factor}", "@{scale}")`));
+  font-size: @calculated-font-size;
+  line-height: ceil((@calculated-font-size / (@line-height * @font-size))) * (@line-height * @font-size);
+}
+
+.ms(
+  @scale,
+  @margin-before: 0,
+  @margin-after: 0,
+  @font-size: @base-font-size,
+  @line-height: @base-line-height,
+  @scale-factor: @scale-factor)
+{
+  .ms-font-size(@scale, @font-size, @line-height);
+  margin-top: @font-size * @line-height * @margin-before;
+  margin-bottom: @font-size * @line-height * @margin-after;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: @header-font;
+  font-weight: @header-weight;
+  margin: 0;
+  padding: 0;
+
+  span {
+    color: @faded-mid;
+  }
+}
+
+h1 {
+  font-family: @accent-font;
+}
+
+body {
+  font-size: @base-font-size;
+  line-height: @base-font-size * @base-line-height;
+}
+p  { .ms(0, 0, 0); }
+h1 { .ms(4, 1, 1); }
+h2 { .ms(2, 2, 0); }
+h3 { .ms(1, 1, 0); }
+h4 { .ms(0, 0, 0); }
+
+@media print {
+  @font-size: 11px;
+  @scale-factor: 1.22;
+  body {
+    font-size: @font-size;
+    line-height: @font-size * @base-line-height;
+  }
+  p  { .ms(0, 0, 0, @font-size, @base-line-height, @scale-factor); }
+  h1 { .ms(5, 1, 1, @font-size, @base-line-height, @scale-factor); }
+  h2 { .ms(2, 2, 0, @font-size, @base-line-height, @scale-factor); }
+  h3 { .ms(1, 1, 0, @font-size, @base-line-height, @scale-factor); }
+  h4 { .ms(0, 0, 0, @font-size, @base-line-height, @scale-factor); }
+  // p  { .ms(0, 0, 0, @font-size); }
+  // h1 { .ms(2, 1, 1, @font-size); }
+  // h2 { .ms(1, 1, 0, @font-size); }
+  // h3 { .ms(0, 1, 0, @font-size); }
+  // h4 { .ms(0, 0, 0, @font-size); }
+  ul {
+    margin-top: 0;
+  }
+}

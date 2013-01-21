@@ -1,0 +1,170 @@
+header, footer {
+  width: 100%;
+  min-width: @min-width;
+  margin: 0;
+  padding: 0;
+  background: @faded-dark;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li { float: left; }
+  a:hover { color: @background; }
+
+  .transition(opacity 500ms ease-in-out 0s);
+  opacity: 1;
+}
+
+header {
+  line-height: 48px;
+  height: 48px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  .box-shadow(0 3px 12px rgba(0, 0, 0, 0.28));
+
+  .inner { .row; }
+
+  li {
+    .column(2);
+    @media @tablet {
+      .column(3);
+    }
+  }
+  a {
+    display: block;
+    height: 100%;
+    text-align: center;
+    .transition(background-color 300ms, color 100ms ease-in-out 0s);
+    color: @faded-mid-light;
+    border-bottom: none;
+  }
+  .name {
+    .column(6);
+    a {
+      .ms-font-size(1);
+      line-height: 48px;
+      text-shadow: 1px 1px 0em darken(@faded-dark, 12%);
+      text-align: left;
+      color: @background;
+      &:hover span {
+        border-bottom: 1px dotted @faded-mid;
+      }
+      @media @mobile {
+        .ms-font-size(0);
+        line-height: 48px;
+      }
+    }
+    @media @laptop {
+      a {
+        padding-left: 20px;
+      }
+    }
+    @media @tablet {
+      .column(3);
+    }
+    @media @mobile {
+      a {
+        padding-left: 10px;
+      }
+    }
+  }
+}
+
+footer {
+  line-height: 48px;
+
+  display: table-row;
+  position: relative;
+  clear: both;
+  .clearfix();
+
+  outline: 8px solid @orange;
+  color: @faded-mid-dark;
+
+  a {
+    color: @faded-mid;
+  }
+
+  li {
+    padding: 0 1em;
+    @media @tiny {
+      padding: 0 0.5em;
+    }
+  }
+
+  .copyright {
+    float: left;
+    padding-left: 10px;
+    margin: 0;
+    small {
+      margin-left: 1em;
+      .ms-font-size(-1);
+    }
+  }
+  .contact {
+    float: right;
+    padding-right: 2px;
+  }
+  i {
+    color: fade(@faded-mid-dark, 50%);
+    margin-right: 0.9em;
+    &:before {
+      vertical-align: -10%;
+      font-size: 1.4em;
+    }
+  }
+
+  @media @tablet {
+    .contact, .copyright {
+      float: none;
+      padding: 0;
+      text-align: center;
+      width: 100%;
+    }
+    ul {
+      display: inline-block;
+    }
+  }
+}
+
+body.index header {
+  opacity: 0;
+}
+
+
+// Tab-specific colours
+body.projects header .projects,
+body.music header .music,
+body.resume header .resume {
+  a {
+    color: white;
+    background-color: @violet;
+    text-shadow: 1px 1px 0em darken(@violet, 18%);
+  }
+}
+
+body.music header .music a {
+  background-color: @magenta;
+  text-shadow: 1px 1px 0em darken(@magenta, 18%);
+}
+
+body.resume header .resume a {
+  background-color: @blue;
+  text-shadow: 1px 1px 0em darken(@blue, 18%);
+}
+
+@media print {
+  #content-wrapper {
+    padding: 0;
+  }
+
+  header, footer {
+    display: none;
+  }
+}

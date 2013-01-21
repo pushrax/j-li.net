@@ -1,0 +1,46 @@
+#projects {
+  ul {
+    padding: 0;
+  }
+  .main {
+    margin-top: 50px;
+  }
+  .project {
+    .row;
+    position: relative;
+    &:nth-child(2n+1) {
+      background-color: @faded-light;
+    }
+  }
+  .left {
+    .column(4);
+    text-align: right;
+    padding: 12px 0 0 0;
+    h2 { margin: 0; }
+    h3 { margin: 8px 0 0 0; }
+  }
+  .right {
+    .column(8);
+    padding: 20px;
+    h3 { margin-top: 0; }
+  }
+  .tag {
+    position: absolute;
+    bottom: 2px;
+    right: 10px;
+    color: @faded-mid-light;
+    .ms(-1);
+  }
+  @media @tablet {
+    .project {
+      padding: 28px 0;
+    }
+    .left, .right {
+      text-align: left;
+      .column(12);
+      padding: 0 20px;
+      h2 { .ms(2, 0, 1); }
+      h3 { .ms(1, 0, 1); }
+    }
+  }
+}

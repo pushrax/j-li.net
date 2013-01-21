@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  #resume
+    .inner-container
+      .controls
+        a(href='#', onclick='window.print();return false') print
+        |  out of your browser, or use the 
+        a(href='/files/resume.pdf') pdf
+
+      include ../jade-resume/resume
+      block resume-content

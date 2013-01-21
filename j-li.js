@@ -1,6 +1,6 @@
 var express = require('express');
 
-var app = module.exports = express.createServer();
+var app = express();
 
 // Configuration
 
@@ -11,6 +11,8 @@ app.configure(function(){
   app.use(express.methodOverride());
   app.use(app.router);
   app.use('/', express.static(__dirname + '/public'));
+
+  app.locals.year = new Date().getFullYear();
 });
 
 app.configure('development', function(){
@@ -23,5 +25,9 @@ app.configure('production', function(){
 
 require('./routes.js')(app);
 
-app.listen(process.env.PORT || 3000);
-console.log("server listening on port %d in %s mode", process.env.PORT || 3000, app.settings.env);
+
+var addr = process.env.PORT || 3000;
+
+app.listen(addr, function() {
+  console.log("Listening on %d in %s mode", addr, app.settings.env);  
+});

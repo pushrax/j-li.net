@@ -1,58 +1,61 @@
-!!!
-html.no-js
-  head
-    case title
-      when ''
-        title j-li.net
-      default
-        title #{title.toLowerCase()} >> j-li.net
-    
-    //- To use WebPutty, uncomment the next line
-    //-link(rel='stylesheet', type='text/css', href='//webputty.commondatastorage.googleapis.com/agtzfmNzc2ZpZGRsZXIMCxIEUGFnZRjUtjwM.css')
-    link(rel='stylesheet', type='text/css', href='/stylesheets/main.css')
-    link(rel='stylesheet', type='text/css', href='/stylesheets/font-awesome.css')
-    link(rel='stylesheet', type='text/css', href='//fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic')
-    script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
-    script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js')
-    script(type='text/javascript', src='/scripts/main.js')
+if partial
+  block content
+  block scripts
+else
+  !!!
+  html.no-js
+    head
+      case title
+        when ''
+          title j-li.net
+        default
+          title #{title.toLowerCase()} &raquo; j-li.net
 
-  body
+      meta(charset="utf-8")
+      meta(name='viewport', content='width=device-width, initial-scale=1.0')
+      link(rel='stylesheet', type='text/css', href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800')
+      link(rel='stylesheet', type='text/css', href='//fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic')
+      link(rel='stylesheet', type='text/css', href='//fonts.googleapis.com/css?family=Donegal+One')
+      link(rel='stylesheet', type='text/css', href='/master.css')
 
-    div#menubar
-      ul
-        li: a.ajaxlink(href='/')
-          i.icon-home
-          |  home
-        li: a(href='http://twitter.com/jli1', title='@jli1 on Twitter')
-          i.icon-twitter
-          |  twitter
-        li: a(href='http://stackoverflow.com/users/888641/jli', title='jli on Stack Overflow')
-          i.icon-sitemap
-          |  stackoverflow
-        li: a(href='http://github.com/j1i', title='j1i on Github')
-          i.icon-github
-          |  github
+    body(class=view)
+      #wrapper
+        header
+          .container
+            ul.inner
+              li.name:     a.ajax(href='/'): span Justin Li
+              li.projects: a.ajax(href='/projects') projects
+              li.music:    a.ajax(href='/music') music
+              li.resume:   a.ajax(href='/resume') résumé
+
+        #content
+          #content-wrapper.container
+            block content
       
+        footer
+          .container
+            .copyright &copy; #{year} 
+              a.ajax(href='/') Justin Li
+              |  
+              small
+                a(href='https://github.com/j1i/j-li.net') open source
+            .contact
+              ul
+                li
+                  i.icon-envelope
+                  a.ajax(href='/', title='jli @ this domain') email
+                li
+                  i.icon-github-alt
+                  a(href='http://github.com/j1i', title='j1i on Github') github
+                //- li
+                  a(href='http://stackoverflow.com/users/888641/jli', title='jli on Stack Overflow') stackoverflow
+                li
+                  i.icon-twitter
+                  a(href='http://twitter.com/jli1', title='@jli1 on Twitter') twitter
 
-    - var hiddenClass = '';
-    - if (view == 'index') hiddenClass = 'nodisplay';
-
-    div#submenu.center-container(class=hiddenClass)
-      include submenu
-      
-      
-    //-div#topSocial
-      ul
-        li.twitter: a.twitter(href='http://twitter.com/jli1', title='Follow on Twitter')
-        li.stackoverflow: a.stackoverflow(href='http://stackoverflow.com/users/888641/jli', title='StackOverflow Account')
-    
-
-
-    div#powered
-      ul
-        li.nodejs
-          a.nodejs(href='http://nodejs.org/')
-    
-
-    div#content!= body
-
+      script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
+      script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js')
+      script(type='text/javascript', src='/scripts/stratus.js')
+      script(type='text/javascript', src='//connect.soundcloud.com/sdk.js')
+      script(type='text/javascript', src='/scripts/main.js')
+      block scripts

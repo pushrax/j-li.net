@@ -1,0 +1,96 @@
+#music {
+  .row;
+  .blurb {
+    .column(12);
+    margin-bottom: 40px;
+  }
+
+  .tracks .track {
+    .column(6);
+    height: 50px;
+    line-height: 50px;
+    opacity: 0;
+    .left {
+      position: absolute;
+      float: left;
+    }
+    img, .image-placeholder {
+      height: 50px;
+      width: 50px;
+      float: left;
+      margin-right: 20px;
+    }
+    .image-placeholder {
+      opacity: .15;
+    }
+    &:nth-child(4n+2), &:nth-child(4n+1) {
+      background-color: @faded-light;
+      .right {
+        background-color: @faded-light;
+      }
+    }
+    .right {
+      position: relative;
+      float: right;
+      background-color: @background;
+      z-index: 10;
+    }
+    .genre {
+      padding: 0 10px;
+      float: left;
+      color: @faded-mid;
+      font-size: 75%;
+    }
+    .link {
+      height: 20px;
+      padding-right: 10px;
+    }
+    a.stratus {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+
+  @media @tablet {
+    .tracks .track {
+      .column(12);
+
+      &:nth-child(4n+2), &:nth-child(4n+1) {
+        background-color: inherit;
+        .right { background-color: inherit; }
+      }
+      &:nth-child(2n+1) {
+        background-color: @faded-light;
+        .right { background-color: @faded-light; }
+      }
+    }
+  }
+
+  noscript {
+    display: block;
+    padding: 20px;
+    text-align: center;
+  }
+}
+
+#stratus {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 10000;
+
+  iframe {
+    visibility: hidden;
+  }
+}
+
+#stratus, #stratus iframe{
+  height: 32px;
+  width: 100%;
+}
+
+#stratus.open, #stratus.open iframe {
+  height: 199px !important;
+}

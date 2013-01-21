@@ -1,17 +1,19 @@
-div#music
-  h1
-    | Music
+extends layout
 
-  h2 2012
+block content
+  #music
+    .blurb.inner-container
+      h1 Music
+      p Collection of random musical tidbits posted on 
+        a(href='https://soundcloud.com/teknetic') soundcloud.com/teknetic
+      p Adherence to conventional genres is blatantly disregarded; listen at your own discretion
 
-  <iframe width="100%" height="166" scrolling="no" frameborder="no" src="http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F49507041&show_artwork=true"></iframe>
+      noscript
+        h2
+          a(href='http://www.activatejavascript.org/') javascript
+          |  is required for this to work.
 
-  h2 2009-2010
+    .tracks
 
-  <iframe width="100%" height="400" scrolling="no" frameborder="no" src="http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F1752165&amp;auto_play=false&amp;show_artwork=false&amp;color=ff7700"></iframe>
-  
-
-  br
-  br
-  p You can find a lot of my older music at 
-    a(href='http://teknetic.newgrounds.com/') teknetic.newgrounds.com
+block scripts
+  script(type='text/javascript', src='/scripts/soundcloud.js')

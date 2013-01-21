@@ -1,5 +1,22 @@
-div#bigname
-  | Justin Li
+extends layout
 
-div#bigmenu.center-container
-  include submenu
+block content
+  #masthead
+    h1.name Justin Li
+    .tagline lover of 
+      span tech
+      |  / 
+      span music 
+      |  / 
+      span food
+    .contact email 
+      span jli
+      |  @ 
+      span this domain
+      |  &mdash; 
+      span: a(href='/files/pgpkey.asc') pgp
+    .menu
+      ul
+        li: a.ajax(href='/projects') projects
+        li: a.ajax(href='/music') music
+        li: a.ajax(href='/resume') résumé

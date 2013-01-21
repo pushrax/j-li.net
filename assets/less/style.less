@@ -1,0 +1,50 @@
+body {
+  background: @background;
+  color: @foreground;
+  font-family: @body-font;
+  font-weight: @body-weight;
+}
+
+::-moz-selection {
+  background: #ff5e99;
+  color: #fff;
+  text-shadow: none;
+}
+
+::selection {
+  background: #ff5e99;
+  color: #fff;
+  text-shadow: none;
+}
+
+a {
+  outline: none;
+  color: @foreground;
+  text-decoration: none;
+  .transition(color 100ms ease-out 0s);
+  border-bottom: 1px dotted @faded-mid;
+
+  &:hover {
+    color: @faded-mid-dark;
+  }
+}
+
+code, kbd, pre, samp {
+  color: @blue;
+}
+
+.name {
+  font-family: @accent-font;
+}
+
+
+@media print {
+  body {
+    background: transparent;
+    color: black;
+  }
+
+  a {
+    border: none;
+  }
+}

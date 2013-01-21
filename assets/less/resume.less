@@ -1,0 +1,67 @@
+#resume {
+  .row;
+  .controls {
+    float: right;
+    font-size: 85%;
+    @media print {
+      display: none;
+    }
+  }
+
+  .inner-container {
+    .column(12);
+  }
+
+  .resume-container {
+    .clearfix();
+  }
+
+  h1, h2 {
+    font-family: @accent-font;
+  }
+
+  table {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    width: 100%;
+
+    margin-top: -2.5em;
+    @media @tablet {
+      margin-top: 0;
+    }
+
+    td {
+      padding-left: 4px;
+      padding-right: 4px;
+      width: 30%;
+    }
+  }
+
+  td, th {
+    &.left {
+      text-align: left;
+    }
+    &.right {
+      text-align: right;
+    }
+    &.center {
+      text-align: center;
+    }
+  }
+
+  .header {
+    text-align: center;
+    margin: 30px 0 50px 0;
+    border-bottom: 5px solid @foreground;
+    border-top: 5px solid @foreground;
+
+    @media print {
+      margin: 0;
+    }
+  }
+
+  .page-break {
+    display: none;
+  }
+}

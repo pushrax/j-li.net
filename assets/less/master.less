@@ -1,0 +1,63 @@
+// Typography
+@accent-font: "Donegal One", serif;
+@body-font: "Open Sans", sans-serif;
+@header-font: "Karla", sans-serif;
+@header-weight: 400;
+@body-weight: 400;
+
+@base-font-size: 16px;
+@base-line-height: 1.5;
+@scale-factor: 1.388; //1.588;
+
+
+// Colours
+@yellow: #b58900;
+@orange: #cb4b16;
+@red: #dc322f;
+@magenta: #d33682;
+@violet: #6c71c4;
+@blue: #268bd2;
+@cyan: #2aa198;
+@green: #8bd226;
+
+@foreground: #202020;
+@background: #fdf6e3;
+
+@faded-dark: mix(@foreground, @background, 90%);
+@faded-mid-dark: mix(@foreground, @background, 68%);
+@faded-mid: mix(@foreground, @background, 50%);
+@faded-mid-light: mix(@foreground, @background, 32%);
+@faded-light: mix(@foreground, @background, 4%);
+
+@shadow-color: darken(@background, 17%);
+
+
+// Layout
+@content-width: 960px;
+@min-width: 340px;
+
+@laptop: ~"only screen and (max-width: 959px)";
+@tablet-width: 767px;
+@tablet: ~"only screen and (max-width: 766px)";
+@mobile-width: 600px;
+@mobile: ~"only screen and (max-width: 599px)";
+@tiny-width: 400px;
+@tiny: ~"only screen and (max-width: 399px)";
+
+
+// Import everything else
+@import 'font-awesome';
+@import 'elements';
+@import 'reset';
+@import 'grid';
+
+@import 'typography';
+
+@import 'style';
+@import 'layout';
+@import 'header-footer';
+
+@import 'index';
+@import 'projects';
+@import 'music';
+@import 'resume';
