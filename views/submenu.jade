@@ -1,7 +1,0 @@
-div.center-outer
-  ul.center-inner
-    each item in menuItems
-      - var itemClasses = item.name
-      - if (item.ajax) itemClasses += ' ajaxlink'
-      - if (item.name == view) itemClasses += ' active'
-      li: a(class=itemClasses, href=item.path) #{item.name}
