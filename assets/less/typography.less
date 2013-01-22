@@ -50,22 +50,17 @@ h3 { .ms(1, 1, 0); }
 h4 { .ms(0, 0, 0); }
 
 @media print {
-  @font-size: 11px;
-  @scale-factor: 1.22;
+  @print-font-size: 11px;
+  @print-scale-factor: 1.22;
   body {
-    font-size: @font-size;
-    line-height: @font-size * @base-line-height;
+    font-size: @print-font-size;
+    line-height: @print-font-size * @base-line-height;
   }
-  p  { .ms(0, 0, 0, @font-size, @base-line-height, @scale-factor); }
-  h1 { .ms(5, 1, 1, @font-size, @base-line-height, @scale-factor); }
-  h2 { .ms(2, 2, 0, @font-size, @base-line-height, @scale-factor); }
-  h3 { .ms(1, 1, 0, @font-size, @base-line-height, @scale-factor); }
-  h4 { .ms(0, 0, 0, @font-size, @base-line-height, @scale-factor); }
-  // p  { .ms(0, 0, 0, @font-size); }
-  // h1 { .ms(2, 1, 1, @font-size); }
-  // h2 { .ms(1, 1, 0, @font-size); }
-  // h3 { .ms(0, 1, 0, @font-size); }
-  // h4 { .ms(0, 0, 0, @font-size); }
+  p  { .ms(0, 0, 0, @print-font-size, @base-line-height, @print-scale-factor); }
+  h1 { .ms(5, 1, 1, @print-font-size, @base-line-height, @print-scale-factor); }
+  h2 { .ms(2, 2, 0, @print-font-size, @base-line-height, @print-scale-factor); }
+  h3 { .ms(1, 1, 0, @print-font-size, @base-line-height, @print-scale-factor); }
+  h4 { .ms(0, 0, 0, @print-font-size, @base-line-height, @print-scale-factor); }
   ul {
     margin-top: 0;
   }
