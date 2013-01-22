@@ -55,23 +55,21 @@ header {
       &:hover span {
         border-bottom: 1px dotted @faded-mid;
       }
+
+      @media @laptop {
+        padding-left: 20px;
+      }
       @media @mobile {
         .ms-font-size(0);
         line-height: 48px;
+        padding-left: 10px;
       }
-    }
-    @media @laptop {
-      a {
-        padding-left: 20px;
+      @media @tiny {
+        padding-left: 6px;
       }
     }
     @media @tablet {
       .column(3);
-    }
-    @media @mobile {
-      a {
-        padding-left: 10px;
-      }
     }
   }
 }
