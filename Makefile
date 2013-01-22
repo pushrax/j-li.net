@@ -10,7 +10,7 @@ dev:
 run: compile-assets
 	node j-li.js
 
-prepare:
+prepare: compile-assets
 	npm install
 	git submodule init
 	git submodule update
