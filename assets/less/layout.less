@@ -10,6 +10,7 @@ div {
 
 #wrapper {
   display: table;
+  border-collapse: collapse;
   height: 100%;
   width: 100%;
 }
@@ -27,8 +28,23 @@ div {
 
 .inner-container {
   width: 100%;
+  position: relative;
   @media @laptop {
     padding-left: 20px;
     padding-right: 20px;
+  }
+}
+
+.separated-row() {
+  border-bottom: 1px solid darken(@faded-light, 5%);
+  &:first-child {
+    border-top: 1px solid darken(@faded-light, 5%);
+  }
+}
+
+.separated-column() {
+  border-right: 1px solid darken(@faded-light, 5%);
+  &:first-child {
+    border-left: 1px solid darken(@faded-light, 5%);
   }
 }

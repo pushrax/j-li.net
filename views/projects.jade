@@ -2,111 +2,121 @@ extends layout
 
 block content
   #projects
-    .inner-container
+    .masthead
       h1 Projects
 
-    ul.main
-      li.project
-        .left: h2: a(href='http://frustra.org') Frustra
-        .right
-          p Frustra Software Design is a collaboration of software between myself and 
-            a(href='http://jacobwirth.ca/') Jacob Wirth
-            | . We've worked together on a few of the projects featured on this page.
+      p Making things is one of my passions, whether it's software, cat toys, cardboard chairs, music, useless circuits, or anything else.
+        | Here's a mostly-software excerpt out of the list of things I've made:
 
-      li.project
-        .left: h2: a(href='http://frustra.org/mycraft') MyCraft
-        .right
-          p A mod manager and loader for all versions of 
-            a(href='http://minecraft.net') Minecraft.
-          p As of August 2012, we've served over 
-            strong 750,000 unique
-            |  downloads.
-        .tag frustra project
+    .main
+      ul.column.left
+        li.project
+          h4: a(href='http://frustra.org') Frustra Software
+          :markdown
+            Frustra Software Design is a collaboration in software between myself and 
+            [Jacob Wirth](http://jacobwirth.ca/). We've worked together on a few of
+            the projects featured on this page.
 
-      li.project
-        .left: h2: a(href='http://frustra.org/tetrus') TetrUs
-        .right
-          p A cooperative multiplayer version of the classic video game 
-            i Tetris 
-          p Each player controls a single block, requiring careful coordination to clear the game.
-        .tag frustra project
-
-      li.project
-        .left
-          h2: a(href='http://portal2sounds.com') Portal 2 Sounds
-          h2
-            span &amp; 
+        li.project
+          h4
+            a(href='http://portal2sounds.com') Portal 2 Sounds
+            span  &amp; 
             a(href='http://tf2sounds.com') TF2 Sounds
-        .right
-          p
-            | A set of 
-            a(href='http://en.wikipedia.org/wiki/Soundboard_(computer_program)') soundboards
-            |  containing every single bit of dialog from Valve's  
-            a(href='http://www.thinkwithportals.com/') Portal
-            |  and 
-            a(href='http://www.teamfortress.com/') Team Fortress 2
-            |  series'.
-          p As of August 2012, we've served over 
-            strong 30,000,000
-            |  aggregate listens, totalling over 
-            strong 3.5 TB
-            |  of content.
-        .tag frustra project
+          :markdown
+            A set of soundboards containing every bit of dialog from Valve's
+            [Portal][] and [Team Fortress 2][] series'.
 
-      li.project
-        .left: h2: a(href='http://wat-do.com') wat do?
-        .right
+            As of March 2013, we've served over **35,000,000** aggregate listens,
+            totalling over **4 TB** of bandwidth.
+
+            [Portal]: http://www.thinkwithportals.com/
+            [Team Fortress 2]: http://www.teamfortress.com/
+          .tag frustra project &raquo; php
+
+        li.project
+          h4: a(href='http://frustra.org/mycraft') MyCraft
+          :markdown
+            A mod manager and loader for all versions of [Minecraft](http://minecraft.net).
+            As of August 2012, we've served over **750,000** unique downloads.
+          .tag frustra project &raquo; java
+
+        li.project
+          h4: a(href='http://wat-do.com') wat do?
           p A time management webapp that helps you decide what to do and track what you got done.
-        .tag frustra project
+            | 
+          .tag frustra project &raquo; node.js
 
-      li.project
-        .left: h2: a(href='https://github.com/pushrax/catnip') catnip
-        .right
-          p A simple, single server deployment utility that automates git and mercurial based workflows.
-          p After setting up a simple 
-            a(href='http://en.wikipedia.org/wiki/YAML') yaml
-            |  file, just run 
-          code $ catnip deploy &lt;project name&gt;
-          p to automatically synchronize the project, compile it as necessary, and run it.
-          p Used in production on the Frustra servers.
+        li.project
+          h4: a(href='https://github.com/pushrax/node-rcon') node-rcon
+          p An RCON client library for Node.js with support for Source, GoldSrc, Minecraft and other servers that use the protocol.
+          .tag node.js
 
-      li.project
-        .left: h2: a(href='https://github.com/pushrax/bfit') bfit
-        .right
-          p brainfuck in time (or 
-            code bfit
-            | ) is a x86 just-in-time compiler for the esoteric language 
-            a(href='http://en.wikipedia.org/wiki/Brainfuck')
-            |  brainfuck, written in pure C.
+        li.project
+          h4: a(href='https://github.com/pushrax/node-xdcc') node-xdcc
+          p A Node.js library for performing XDCC file transfers.
+          .tag node.js
 
-    .inner-container
-      h2 Open source libraries
-
-      p Some simple stuff that I've developed for use in my own projects.
-
-    ul.libraries
-      li.project
-        .left: h3: a(href='https://github.com/pushrax/node-blog-base') node-blog-base
-        .right
+        li.project
+          h4: a(href='https://github.com/pushrax/node-blog-base') node-blog-base
           p A dead simple, lightweight blogging backend built in Node.js with markdown. Powers the 
             a(href='http://frustra.org/blog') Frustra blog
             | .
+          .tag node.js
 
-      li.project
-        .left: h3: a(href='https://github.com/pushrax/express-template-cache') express-template-cache
-        .right
+        li.project
+          h4: a(href='https://github.com/pushrax/mal') mal
+          p A command-line client for 
+            a(href='http://myanimelist.net') MyAnimeList.net
+            |  using their official REST API.
+          .tag python
+
+      ul.column.right
+        li.project
+          h4: a(href='https://github.com/pushrax/catnip') catnip
+          p A simple, single server deployment utility that automates git and mercurial based workflows.
+          p Used in production on the Frustra servers.
+          .tag node.js
+
+        li.project
+          h4: a(href='https://github.com/pushrax/bfit') bfit
+          :markdown
+            brainfuck in time (or *bfit*) is a x86 just-in-time compiler for the esoteric language
+            [brainfuck](http://en.wikipedia.org/wiki/Brainfuck'), written in pure C.
+          .tag c99
+
+        li.project
+          h4: a(href='https://github.com/pushrax/kantan') kantan
+          p kantan is a way to generate consistent 16-colour templates
+            | across all of the programs you use. It has defaut templates for
+            | vim, xterm, iTerm 2, and more.
+          .tag bash
+
+        li.project
+          h4: a(href='http://frustra.org/tetrus') TetrUs
+          :markdown
+            A cooperative multiplayer version of the classic video game *Tetris*
+            Each partner controls a single block, requiring coordination to earn points and clear the game.
+          .tag frustra project &raquo; java
+
+        li.project
+          h4: a(href='https://github.com/pushrax/express-template-cache') express-template-cache
           p A fast template cache for rendering static pages in 
             a(href='http://expressjs.com') Express
             | .
+          .tag node.js
 
-      li.project
-        .left: h3: a(href='https://github.com/pushrax/jp33r') jp33r
-        .right
+        li.project
+          h4: a(href='https://github.com/pushrax/jp33r') jp33r
           p A peer-to-peer UDP socket library that automates NAT traversal for Java applications. Used in 
             a(href='https://github.com/pushrax/tetrus') TetrUs
             | .
+          .tag java
 
-      li.project
-        .left: h3: a(href='https://github.com/pushrax/node-rcon') node-rcon
-        .right
-          p An RCON client for Node.js with support for Source, GoldSrc, Minecraft and other servers that use the protocol.
+        li.project
+          h4: a(href='https://github.com/kotokoko/chihaya') Chihaya
+          p A high-performance, scalable 
+            a(href='http://en.wikipedia.org/wiki/BitTorrent') BitTorrent
+            |  tracker in Go. It is currently powering a network of almost 200,000
+            | peers, sustaining an average throughput of around 12,000 req/min.
+          .tag go
+

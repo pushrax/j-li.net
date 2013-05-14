@@ -1,67 +1,97 @@
 #resume {
   .row;
   .controls {
-    float: right;
+    position: absolute;
+    z-index: 2;
+    right: 10px;
     font-size: 85%;
     @media print {
       display: none;
     }
   }
 
-  .inner-container {
-    .column(12);
+  .masthead {
+    text-align: center;
+    margin-bottom: 40px;
+    p {
+      font-family: @serif;
+      .ms-font-size(1);
+    }
+    h1, h2 {
+      font-family: @accent-font;
+    }
   }
 
   .resume-container {
     .clearfix();
   }
 
-  h1, h2 {
-    font-family: @accent-font;
+  .experience h3, .qualifications h3 {
+    margin-top: 0;
   }
 
-  table {
-    margin-left: auto;
-    margin-right: auto;
-    border-collapse: collapse;
-    width: 100%;
-
-    margin-top: -2.5em;
-    @media @tablet {
-      margin-top: 0;
-    }
-
-    td {
-      padding-left: 4px;
-      padding-right: 4px;
-      width: 30%;
-    }
+  ul {
+    padding-left: 1.2em;
   }
 
-  td, th {
-    &.left {
-      text-align: left;
-    }
-    &.right {
-      text-align: right;
-    }
-    &.center {
-      text-align: center;
-    }
-  }
+  .experience {
+    .column(8);
 
-  .header {
-    text-align: center;
-    margin: 30px 0 50px 0;
-    border-bottom: 5px solid @foreground;
-    border-top: 5px solid @foreground;
+    .job {
+      padding: 18px 18px 18px 18px;
+      border-right: 1px solid darken(@faded-light, 5%);
+      h4 {
+        margin-top: 0;
+      }
+      border-bottom: 1px solid darken(@faded-light, 5%);
+      &:last-child {
+        border-bottom: none;
+      }
+    }
 
-    @media print {
-      margin: 0;
+    .title { color: @foreground; }
+    .at { color: @faded-mid-light; }
+    .duration { color: @faded-mid; }
+    .tools {
+      color: @faded-mid; .ms(-1);
+      padding: 0;
+      li {
+        display: inline-block;
+        margin-right: 1em;
+        margin-bottom: 1em;
+        padding: 0 .5em;
+        background: @faded-light;
+        .rounded(2px);
+      }
     }
   }
 
-  .page-break {
-    display: none;
+  .qualifications {
+    .column(4);
+
+    .title { color: @orange; }
+    .separator { color: @faded-mid-light; }
+    .duration { color: @faded-mid-dark; }
   }
+
+  .education {
+    padding-top: 1em;
+    .column(4);
+    .title { color: @orange; }
+    .duration { color: @faded-mid; }
+  }
+
+  @media @tablet {
+    .experience, .qualifications {
+      .column(12);
+      h3 {
+        padding-top: 1em;
+      }
+    }
+    .experience .job {
+      border-right: none;
+    }
+    .education { .column(12); }
+  }
+
 }

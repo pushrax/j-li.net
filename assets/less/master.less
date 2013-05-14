@@ -1,11 +1,11 @@
 // Typography
 @accent-font: "Donegal One", serif;
 @body-font: "Open Sans", sans-serif;
-@header-font: "Karla", sans-serif;
+@serif: "Noto Serif", serif;
 @header-weight: 400;
 @body-weight: 400;
 
-@base-font-size: 16px;
+@base-font-size: 14px;
 @base-line-height: 1.5;
 @scale-factor: 1.388; //1.588;
 
@@ -20,8 +20,10 @@
 @cyan: #2aa198;
 @green: #8bd226;
 
-@foreground: #202020;
-@background: #fdf6e3;
+@foreground: #282825;
+@foreground0: #333430;
+@foreground2: #333430;
+@background: #FCFCED;
 
 @faded-dark: mix(@foreground, @background, 90%);
 @faded-mid-dark: mix(@foreground, @background, 68%);
@@ -29,7 +31,7 @@
 @faded-mid-light: mix(@foreground, @background, 32%);
 @faded-light: mix(@foreground, @background, 4%);
 
-@shadow-color: darken(@background, 17%);
+@shadow-color: lighten(@background, 3%);
 
 
 // Layout
@@ -46,7 +48,7 @@
 
 
 // Import everything else
-@import 'font-awesome';
+@import 'font-awesome/font-awesome';
 @import 'elements';
 @import 'reset';
 @import 'grid';

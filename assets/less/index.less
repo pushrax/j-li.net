@@ -1,32 +1,36 @@
 #masthead {
-  padding: 100px 0 30px;
+  padding: 80px 0 30px;
   text-align: center;
-  text-shadow: 1px 1px 0.1em @shadow-color;
+  text-shadow: 0 1px 0 @shadow-color;
 
   .tagline, .contact {
-    .ms(0, 0, 0);
-    text-shadow: 1px 1px 0.05em @shadow-color;
+    .ms(1, 0, 0);
+    text-shadow: 0 1px 0 @shadow-color;
     font-weight: 300;
     letter-spacing: 0.1em;
-    color: @faded-mid-light;
+    padding-top: 0.5em;
+    color: @faded-mid;
     span {
+      font-weight: 600;
       color: @faded-dark;
-      font-weight: 400;
     }
+  }
+  .contact span {
+    color: @orange;
   }
 
   .name { .ms(6, 0, 0); }
 
   @media @tablet {
-    //text-align: left;
     padding: 0;
     .tagline {
       margin-top: 10px;
     }
+    .name { .ms-font-size(6); }
   }
   @media @mobile {
     .tagline, .contact {
-      span { .ms-font-size(0); }
+      .ms-font-size(0);
     }
     .name { .ms-font-size(5); }
   }
@@ -41,7 +45,7 @@
     font-family: @body-font;
     font-weight: 200;
     padding: 20px 0 0;
-    text-shadow: 1px 1px 0.1em @shadow-color;
+    text-shadow: 0 1px 0 @shadow-color;
     text-align: center;
 
     ul {
@@ -67,6 +71,8 @@
         display: block;
         padding: 0 20px;
         border-bottom: none;
+        color: @foreground;
+        &:hover { color: @faded-mid-dark; }
       }
 
       @media @tablet {

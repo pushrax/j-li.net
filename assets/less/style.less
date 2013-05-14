@@ -19,18 +19,23 @@ body {
 
 a {
   outline: none;
-  color: @foreground;
+  color: @orange;
   text-decoration: none;
   .transition(color 100ms ease-out 0s);
-  border-bottom: 1px dotted @faded-mid;
+  border-bottom: 1px dotted lighten(@orange, 30%);
 
   &:hover {
     color: @faded-mid-dark;
+    border-bottom-color: @orange;
   }
 }
 
 code, kbd, pre, samp {
   color: @blue;
+}
+
+ul {
+  list-style: square;
 }
 
 .name {

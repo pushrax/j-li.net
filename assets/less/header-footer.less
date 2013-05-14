@@ -13,13 +13,13 @@ header, footer {
   li { float: left; }
   a:hover { color: @background; }
 
-  .transition(opacity 500ms ease-in-out 0s);
   opacity: 1;
 }
 
+@header-height: 48px;
 header {
-  line-height: 48px;
-  height: 48px;
+  line-height: @header-height;
+  height: @header-height;
 
   position: fixed;
   top: 0;
@@ -27,33 +27,63 @@ header {
   z-index: 1000;
 
   .box-shadow(0 3px 12px rgba(0, 0, 0, 0.28));
+  .transition(opacity 350ms ease-in-out, top 300ms cubic-bezier(0.86, 0, 0.07, 1));
 
   .inner { .row; }
 
   li {
     .column(2);
-    @media @tablet {
-      .column(3);
-    }
+    @media @tablet { .column(3); }
   }
   a {
     display: block;
     height: 100%;
     text-align: center;
-    .transition(background-color 300ms, color 100ms ease-in-out 0s);
+    .transition(color 100ms ease-in-out);
     color: @faded-mid-light;
     border-bottom: none;
+    position: relative;
+
+    span.title { padding-left: 8px; }
+    i { .transition(color 50ms ease-in-out); }
+
+    div {
+      height: 0;
+      width: 100%;
+      position: absolute;
+      top: 0; left: 0;
+      .transition(height 300ms ease-in-out);
+    }
+    @media @mobile {
+      span.title {
+        display: none;
+      }
+    }
   }
-  .name {
+  li.name {
     .column(6);
     a {
       .ms-font-size(1);
-      line-height: 48px;
-      text-shadow: 1px 1px 0em darken(@faded-dark, 12%);
+      line-height: @header-height;
+      text-shadow: 0 1px 0 darken(@faded-dark, 12%);
       text-align: left;
       color: @background;
-      &:hover span {
-        border-bottom: 1px dotted @faded-mid;
+      border: none;
+
+      .name {
+        .transition(opacity 200ms ease-in-out);
+        opacity: 1;
+      }
+
+      &:hover span.wrapper {
+        span {
+          border-bottom: 1px dotted @faded-mid;
+        }
+        i { color: @background; }
+      }
+      i {
+        color: @faded-mid-light;
+        padding-right: 10px;
       }
 
       @media @laptop {
@@ -61,8 +91,9 @@ header {
       }
       @media @mobile {
         .ms-font-size(0);
-        line-height: 48px;
+        line-height: @header-height;
         padding-left: 10px;
+        i { display: none; }
       }
       @media @tiny {
         padding-left: 6px;
@@ -75,18 +106,19 @@ header {
 }
 
 footer {
-  line-height: 48px;
+  line-height: @header-height;
 
   display: table-row;
   position: relative;
   clear: both;
   .clearfix();
 
-  outline: 8px solid @orange;
+  border-top: 8px solid @orange;
   color: @faded-mid-dark;
 
   a {
     color: @faded-mid;
+    border-bottom: 1px dotted @faded-mid-dark;
   }
 
   li {
@@ -108,13 +140,12 @@ footer {
   .contact {
     float: right;
     padding-right: 2px;
-  }
-  i {
-    color: fade(@faded-mid-dark, 50%);
-    margin-right: 0.9em;
-    &:before {
-      vertical-align: -10%;
-      font-size: 1.4em;
+    a {
+      color: @faded-mid-dark;
+      &:hover { color: @background; }
+      i {
+        margin-top: 2px;
+      }
     }
   }
 
@@ -132,6 +163,7 @@ footer {
 }
 
 body.index header {
+  top: -@header-height;
   opacity: 0;
 }
 
@@ -141,21 +173,39 @@ body.projects header .projects,
 body.music header .music,
 body.resume header .resume {
   a {
-    color: white;
-    background-color: @violet;
-    text-shadow: 1px 1px 0em darken(@violet, 18%);
+    color: @background;
+    i { color: @background; }
+    div { height: 7px; }
   }
 }
 
-body.music header .music a {
-  background-color: @magenta;
-  text-shadow: 1px 1px 0em darken(@magenta, 18%);
+header {
+  .projects a {
+    div { background-color: @violet; }
+    i { color: @violet; }
+    &:hover i { color: lighten(@violet, 10%); }
+  }
+  .music a {
+    div { background-color: @magenta; }
+    i { color: @magenta; }
+    &:hover i { color: lighten(@magenta, 10%); }
+  }
+  .resume a {
+    div { background-color: @blue; }
+    i { color: @blue; }
+    &:hover i { color: lighten(@blue, 10%); }
+  }
 }
 
-body.resume header .resume a {
-  background-color: @blue;
-  text-shadow: 1px 1px 0em darken(@blue, 18%);
+body.resume header .name {
+  .name {
+    opacity: 0;
+  }
+  i { display: inline; }
 }
+
+//body.music header .music a { text-shadow: 0 1px 0 darken(@magenta, 18%); }
+//body.resume header .resume a { text-shadow: 0 1px 0 darken(@blue, 18%); }
 
 @media print {
   #content-wrapper {

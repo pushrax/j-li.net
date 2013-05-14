@@ -7,14 +7,14 @@ else
     head
       case title
         when ''
-          title j-li.net
+          title Justin Li
         default
-          title #{title.toLowerCase()} &raquo; j-li.net
+          title #{title} &raquo; Justin Li
 
       meta(charset="utf-8")
       meta(name='viewport', content='width=device-width, initial-scale=1.0')
       link(rel='stylesheet', type='text/css', href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800')
-      link(rel='stylesheet', type='text/css', href='//fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic')
+      link(rel='stylesheet', type='text/css', href='//fonts.googleapis.com/css?family=Noto+Serif:400,400italic')
       link(rel='stylesheet', type='text/css', href='//fonts.googleapis.com/css?family=Donegal+One')
       link(rel='stylesheet', type='text/css', href='/master.css')
 
@@ -23,10 +23,21 @@ else
         header
           .container
             ul.inner
-              li.name:     a.ajax(href='/'): span Justin Li
-              li.projects: a.ajax(href='/projects') projects
-              li.music:    a.ajax(href='/music') music
-              li.resume:   a.ajax(href='/resume') résumé
+              li.name: a.ajax(href='/'): span.wrapper
+                i.icon-home
+                span.name Justin Li
+              li.projects: a.ajax(href='/projects')
+                i.icon-rocket
+                span.title projects
+                div
+              li.music: a.ajax(href='/music')
+                i.icon-music
+                span.title music
+                div
+              li.resume: a.ajax(href='/resume')
+                i.icon-briefcase
+                span.title résumé
+                div
 
         #content
           #content-wrapper.container
@@ -41,15 +52,12 @@ else
                 a(href='https://github.com/pushrax/j-li.net') open source
             .contact
               ul
-                li
-                  i.icon-envelope
-                  a.ajax(href='/', title='jli @ this domain') email
-                li
-                  i.icon-github-alt
-                  a(href='http://github.com/pushrax', title='pushrax on Github') github
-                li
-                  i.icon-twitter
-                  a(href='http://twitter.com/pushrax', title='@pushrax on Twitter') twitter
+                li: a.ajax(href='/', title='email jli @ this domain')
+                  i.icon-envelope-alt.icon-2x.pull-left
+                li: a(href='http://github.com/pushrax', title='pushrax on Github')
+                  i.icon-github.icon-2x.pull-left
+                li: a(href='http://twitter.com/pushrax', title='@pushrax on Twitter')
+                  i.icon-twitter.icon-2x.pull-left
 
       script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
       script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js')
