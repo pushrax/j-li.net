@@ -1,9 +1,18 @@
 .ms-font-size(@scale, @font-size: @base-font-size, @line-height: @base-line-height) when (@scale = 0) {
   font-size: @font-size;
-  line-height: @font-size * @line-height;
 }
 
 .ms-font-size(@scale, @font-size: @base-font-size, @line-height: @base-line-height, @scale-factor: @scale-factor) {
+  @calculated-font-size: round(@font-size * (~`Math.pow("@{scale-factor}", "@{scale}")`));
+  font-size: @calculated-font-size;
+}
+
+.ms-size(@scale, @font-size: @base-font-size, @line-height: @base-line-height) when (@scale = 0) {
+  font-size: @font-size;
+  line-height: @font-size * @line-height;
+}
+
+.ms-size(@scale, @font-size: @base-font-size, @line-height: @base-line-height, @scale-factor: @scale-factor) {
   // TODO: do this without inline JS?
   @calculated-font-size: round(@font-size * (~`Math.pow("@{scale-factor}", "@{scale}")`));
   font-size: @calculated-font-size;
@@ -18,7 +27,7 @@
   @line-height: @base-line-height,
   @scale-factor: @scale-factor)
 {
-  .ms-font-size(@scale, @font-size, @line-height, @scale-factor);
+  .ms-size(@scale, @font-size, @line-height, @scale-factor);
   margin-top: @font-size * @line-height * @margin-before;
   margin-bottom: @font-size * @line-height * @margin-after;
 }
@@ -38,6 +47,8 @@ h1 {
 }
 
 body {
+  font-family: @sans;
+  font-weight: @body-weight;
   font-size: @base-font-size;
   line-height: @base-font-size * @base-line-height;
 }

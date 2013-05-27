@@ -1,13 +1,15 @@
 #projects {
   .masthead {
     .row;
+    margin-bottom: 10px;
     h1 {
       float: left;
-      margin-right: 1em;
+      margin-right: 0.5em;
     }
     p {
-      margin-top: 34px;
+      margin-top: 25px;
       padding-right: 10px;
+      line-height: 25px;
       font-family: @serif;
     }
     @media @laptop {
@@ -20,16 +22,15 @@
       }
     }
   }
-  .main {
-    .row;
-    margin-top: 30px;
-  }
+  .main { .row; }
   h4 { margin: 0 0 10px 0; }
   ul.column {
     padding: 0;
     margin: 0;
     width: 50%;
     float: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     list-style: none;
     .separated-column;

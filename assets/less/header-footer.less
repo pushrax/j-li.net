@@ -4,6 +4,7 @@ header, footer {
   margin: 0;
   padding: 0;
   background: @faded-dark;
+  font-family: @accent-font;
 
   ul {
     margin: 0;
@@ -43,6 +44,7 @@ header {
     color: @faded-mid-light;
     border-bottom: none;
     position: relative;
+    .ms-font-size(1);
 
     span.title { padding-left: 8px; }
     i { .transition(color 50ms ease-in-out); }
@@ -63,8 +65,7 @@ header {
   li.name {
     .column(6);
     a {
-      .ms-font-size(1);
-      line-height: @header-height;
+      .ms-font-size(2);
       text-shadow: 0 1px 0 darken(@faded-dark, 12%);
       text-align: left;
       color: @background;
@@ -90,12 +91,11 @@ header {
         padding-left: 20px;
       }
       @media @mobile {
-        .ms-font-size(0);
-        line-height: @header-height;
         padding-left: 10px;
         i { display: none; }
       }
       @media @tiny {
+        .ms-font-size(1);
         padding-left: 6px;
       }
     }
@@ -132,9 +132,10 @@ footer {
     float: left;
     padding-left: 10px;
     margin: 0;
+    .ms-font-size(1);
     small {
       margin-left: 1em;
-      .ms-font-size(-1);
+      .ms-font-size(0);
     }
   }
   .contact {
@@ -175,7 +176,7 @@ body.resume header .resume {
   a {
     color: @background;
     i { color: @background; }
-    div { height: 7px; }
+    div { height: 5px; }
   }
 }
 
@@ -202,6 +203,12 @@ body.resume header .name {
     opacity: 0;
   }
   i { display: inline; }
+  @media @mobile {
+    .name { display: none; }
+    a {
+      text-align: center;
+    }
+  }
 }
 
 //body.music header .music a { text-shadow: 0 1px 0 darken(@magenta, 18%); }

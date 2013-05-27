@@ -7,7 +7,8 @@
     .ms(1, 0, 0);
     text-shadow: 0 1px 0 @shadow-color;
     font-weight: 300;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.05em;
+    font-family: @sans;
     padding-top: 0.5em;
     color: @faded-mid;
     span {
@@ -19,7 +20,11 @@
     color: @orange;
   }
 
-  .name { .ms(6, 0, 0); }
+  .name {
+    .ms-font-size(7);
+    color: @faded-mid-light;
+    text-shadow: 1px 1px 0 @faded-mid;
+  }
 
   @media @tablet {
     padding: 0;
@@ -32,17 +37,17 @@
     .tagline, .contact {
       .ms-font-size(0);
     }
-    .name { .ms-font-size(5); }
   }
   @media @tiny {
-    .name { .ms-font-size(4); }
+    .name { .ms-font-size(5); }
   }
 
   .menu {
     .ms(3, 0, 0);
-    @media @tiny { .ms-font-size(2); }
+    @media @tiny { .ms-size(2); }
 
-    font-family: @body-font;
+    //font-family: @sans;
+    font-family: @accent-font;
     font-weight: 200;
     padding: 20px 0 0;
     text-shadow: 0 1px 0 @shadow-color;
@@ -65,7 +70,21 @@
       @border: 1px dashed fadeout(@foreground, 80%);
       float: left;
       margin: 0;
-      border-left: @border;
+      position: relative;
+
+      &:after {
+        content: "/";
+        font-family: @sans;
+        font-weight: 200;
+        font-size: 92%;
+        position: absolute;
+        top: -2px;
+        right: -6px;
+        color: @faded-mid-light;
+      }
+      &:last-child:after {
+        content: "";
+      }
 
       a {
         display: block;
@@ -82,6 +101,9 @@
         border-top: @border;
         a {
           padding: 20px 0;
+        }
+        &:after {
+          content: "";
         }
         &:last-child {
           border-bottom: @border;
