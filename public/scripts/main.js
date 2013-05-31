@@ -45,7 +45,10 @@ function updateClickHandlers(globalAjax) {
   });
 }
 
+var initialPopState = false;
+
 window.onpopstate = function(event) {
+  if (initialPopState) return initialPopState = false;
   if (event.state && event.state.substr(0, 14) == 'j-li.net-hist|') {
     openPage(event.state.substr(14), false);
   }
@@ -53,6 +56,7 @@ window.onpopstate = function(event) {
 
 $(document).ready(function() {
   if (Modernizr.history) {
+    initialPopState = true;
     window.history.replaceState('j-li.net-hist|', 'Title', window.location.pathname);
     updateClickHandlers(true);
   }
