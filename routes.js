@@ -1,7 +1,7 @@
 var fs = require('fs');
 
 module.exports = function(app) {
-  function renderPage(req, res, view, data) {
+  function respond(req, res, view, data) {
     var title = view;
     if (view == 'index') title = '';
 
@@ -16,23 +16,23 @@ module.exports = function(app) {
   }
 
   app.get('/', function(req, res) {
-    renderPage(req, res, 'index');
+    respond(req, res, 'index');
   });
 
   app.get('/projects', function(req, res) {
-    renderPage(req, res, 'projects');
+    respond(req, res, 'projects');
   });
 
   app.get('/music', function(req, res) {
-    renderPage(req, res, 'music');
+    respond(req, res, 'music');
   });
 
   app.get('/resume', function(req, res) {
-    renderPage(req, res, 'resume');
+    respond(req, res, 'resume');
   });
 
   app.use(function(req, res, next) {
     res.status(404);
-    renderPage(req, res, '404');
+    respond(req, res, '404');
   });
 };
