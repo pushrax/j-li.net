@@ -5,6 +5,9 @@ function openPage(path, updateHistory) {
 
   $('#content-wrapper').animate({ opacity: 0 }, 100, function() {
     $.getJSON(path + "?ajax", function(data) {
+      if (_gaq) {
+        _gaq.push(['_trackPageview', path]);
+      }
       $('body').removeClass().addClass(data.view);
       $('#content-wrapper').html(data.html).animate({ opacity: 1 }, 100);
       updateClickHandlers(false);
