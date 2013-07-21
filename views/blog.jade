@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  section#blog
+    #blog-index
+      h1 information without a home
+      each post in posts
+        - var postUrl = '/blog/' + moment(post.date).format('YYYY/MM/DD') + '/' + post.name
+        article
+          h2: a.ajax(href=postUrl)= post.title
+          p.date= moment(post.date).fromNow()
+          p.tags
+            each tag, index in post.meta.tags
+              a(href='/blog/tag/' + tag)= tag
+              - if (index < post.meta.tags.length - 1)
+                |, 
+
+          p.body !{post.html}

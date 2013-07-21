@@ -1,15 +1,18 @@
 {
-    "name": "j-li.net"
-  , "version": "0.0.1"
-  , "private": true
-  , "engines": {
-      "node": "0.8.x"
-    , "npm": "1.1.36"
-    }
-  , "dependencies": {
-      "express": "3.0.x"
-    , "jade": "0.28.1"
-    , "less": "1.3.3"
-    , "marked": "*"
+  "name": "j-li.net",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.36"
+  },
+  "dependencies": {
+    "express": "~3.0.0",
+    "jade": "~0.28.1",
+    "less": "~1.3.3",
+    "marked": "*",
+    "blog-base": "*",
+    "underscore": "~1.5.1",
+    "moment": "~2.1.0"
   }
 }

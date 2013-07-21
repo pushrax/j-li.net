@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  section#blog
+    article#blog-post
+      h1= post.title
+      div.meta
+        span.date Posted #{moment(post.date).fromNow()}
+        span.tags
+          - if (post.meta.tags.length > 0)
+            |  in 
+            each tag, index in post.meta.tags
+              a(href='/blog/tag/' + tag)= tag
+              - if (index < post.meta.tags.length - 2)
+                | , 
+              - else if (index == post.meta.tags.length - 2)
+                |  and 
+
+      p.body !{post.html}

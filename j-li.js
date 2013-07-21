@@ -1,4 +1,5 @@
-var express = require('express');
+var express = require('express')
+  , Blog = require('blog-base');
 
 var app = express();
 
@@ -13,6 +14,8 @@ app.configure(function(){
   app.use('/', express.static(__dirname + '/public'));
 
   app.locals.year = new Date().getFullYear();
+  app.locals.moment = require('moment');
+  app.blog = new Blog(__dirname + '/blog-posts');
 });
 
 app.configure('development', function(){
