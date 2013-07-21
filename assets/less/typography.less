@@ -63,6 +63,7 @@ h1 { .ms(4, 1, 1); }
 h2 { .ms(3, 2, 1); }
 h3 { .ms(2, 1, 0); }
 h4 { .ms(1, 1, 0); }
+h5 { .ms(0, 0, 0); }
 
 @media print {
   @print-font-size: 11px;
@@ -76,6 +77,7 @@ h4 { .ms(1, 1, 0); }
   h2 { .ms(2, 2, 0, @print-font-size, @base-line-height, @print-scale-factor); }
   h3 { .ms(1, 1, 0, @print-font-size, @base-line-height, @print-scale-factor); }
   h4 { .ms(0, 0, 0, @print-font-size, @base-line-height, @print-scale-factor); }
+  h5 { .ms(0, 0, 0, @print-font-size, @base-line-height, @print-scale-factor); }
   ul {
     margin-top: 0;
   }
