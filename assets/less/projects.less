@@ -5,6 +5,7 @@
     h1 {
       float: left;
       margin-right: 0.5em;
+      margin-top: 0;
     }
     p {
       margin-top: 25px;
@@ -22,7 +23,10 @@
       }
     }
   }
-  .main { .row; }
+  .main {
+    .row;
+    margin-top: 2em;
+  }
   h4 { margin: 0 0 10px 0; }
   ul.column {
     padding: 0;
@@ -37,7 +41,7 @@
   }
   .project {
     .separated-row;
-    padding: 20px;
+    padding: 20px 20px 30px;
     position: relative;
     &:nth-child(2n+1) {
       background-color: @faded-light;

@@ -18,8 +18,12 @@
       font-family: @serif;
       .ms(1);
     }
-    h1 {
-      .ms(9);
+    h1 { .ms(9); }
+    @media @tablet {
+      h1 { .ms(8); }
+    }
+    @media @mobile {
+      h1 { .ms(7); }
     }
   }
 
