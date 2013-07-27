@@ -1,5 +1,6 @@
-function openPage(path, updateHistory) {
+function openPage(path, updateHistory, callback) {
   if (updateHistory) {
+    if (path == document.location.pathname) return callback ? callback(false) : undefined;
     window.history.pushState('j-li.net-hist|' + path, 'Title', path);
   }
 
@@ -14,6 +15,8 @@ function openPage(path, updateHistory) {
       if (updateHistory) window.scrollTo(0, 1);
       if (data.title !== '') document.title = data.title + ' » Justin Li';
       else document.title = 'Justin Li';
+
+      if (callback) callback(true);
     });
   });
 }
@@ -63,6 +66,19 @@ $(document).ready(function() {
     window.history.replaceState('j-li.net-hist|', 'Title', window.location.pathname);
     updateClickHandlers(true);
   }
+
+  $('#email-link').unbind('click').click(function() {
+    openPage($(this).attr("href"), true, function(navigated) {
+      function highlightContact() {
+        var elem = $('#frontpage .contact').addClass('highlighted');
+        setTimeout(function() { elem.removeClass('highlighted'); }, 300);
+      }
+      if (navigated) setTimeout(highlightContact, 300);
+      else highlightContact();
+    });
+    $(this).blur();
+    return false;
+  });
 
   SC.initialize({
     client_id: "77272076b9c38d199fad773ce817a2fc"

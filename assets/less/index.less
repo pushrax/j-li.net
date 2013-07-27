@@ -9,7 +9,7 @@
     font-weight: 500;
     letter-spacing: 0.05em;
     font-family: @sans;
-    padding-top: 0.5em;
+    margin-top: 0.5em;
     color: @faded-mid;
     span {
       font-weight: bold;
@@ -18,6 +18,13 @@
   }
   .contact span {
     color: @orange;
+  }
+  .contact {
+    .transition(background 1400ms);
+  }
+  .contact.highlighted {
+    background: white;
+    .transition(background 10ms);
   }
 
   .name {
