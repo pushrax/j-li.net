@@ -46,7 +46,7 @@ else
         footer
           .container
             .copyright &copy; #{year} 
-              a.ajax(href='/') Justin Li
+              a.name.ajax(href='/') Justin Li
               |  
               small
                 a(href='https://github.com/pushrax/j-li.net') open source
@@ -59,8 +59,8 @@ else
                 li: a(href='http://twitter.com/pushrax', title='@pushrax on Twitter')
                   i.icon-twitter.icon-2x.pull-left
 
-      script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
       script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js')
+      script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
       script(type='text/javascript', src='/scripts/stratus.js')
       script(type='text/javascript', src='//connect.soundcloud.com/sdk.js')
       script(type='text/javascript', src='/scripts/main.js')

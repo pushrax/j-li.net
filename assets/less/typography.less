@@ -1,40 +1,68 @@
-.ms-font-size(@scale, @font-size: @base-font-size, @line-height: @base-line-height) when (@scale = 0) {
-  font-size: @font-size;
+@base-font-size: 18px;
+@base-line-height: 1.5;
+//@scale-factor: 1.588;
+@scale-factor: 1.618;
+//@scale-factor: 1.388;
+
+.ms-font-size (@scale, @scale-factor: @scale-factor) when (mod(@scale, 2) = 1) {
+  @calculated-font-size: (1 * (~`Math.pow("@{scale-factor}", "@{scale}" / 2)`));
+  font-size: @calculated-font-size * 1rem;
 }
 
-.ms-font-size(@scale, @font-size: @base-font-size, @line-height: @base-line-height, @scale-factor: @scale-factor) {
-  @calculated-font-size: round(@font-size * (~`Math.pow("@{scale-factor}", "@{scale}")`));
-  font-size: @calculated-font-size;
+.ms-font-size (@scale, @scale-factor: @scale-factor) {
+  @calculated-font-size: (1 * (~`Math.pow("@{scale-factor}", "@{scale}" / 2)`));
+  font-size: @calculated-font-size * 1rem;
 }
 
-.ms-size(@scale, @font-size: @base-font-size, @line-height: @base-line-height) when (@scale = 0) {
-  font-size: @font-size;
-  line-height: @font-size * @line-height;
+.ms-size (@scale, @line-height: @base-line-height) {
+  .ms-font-size(@scale);
+  @calculated-line-height: @calculated-font-size * @line-height;
+  line-height: @calculated-line-height * 1rem;
+  //line-height: ceil((@calculated-font-size / (@line-height * @font-size))) * (@line-height * @font-size);
 }
 
-.ms-size(@scale, @font-size: @base-font-size, @line-height: @base-line-height, @scale-factor: @scale-factor) {
-  // TODO: do this without inline JS?
-  @calculated-font-size: round(@font-size * (~`Math.pow("@{scale-factor}", "@{scale}")`));
-  font-size: @calculated-font-size;
-  line-height: ceil((@calculated-font-size / (@line-height * @font-size))) * (@line-height * @font-size);
-}
-
-.ms(
+.ms (
   @scale,
   @margin-before: 0,
   @margin-after: 0,
-  @font-size: @base-font-size,
-  @line-height: @base-line-height,
-  @scale-factor: @scale-factor)
+  @line-height: @base-line-height)
 {
-  .ms-size(@scale, @font-size, @line-height, @scale-factor);
-  margin-top: @font-size * @line-height * @margin-before;
-  margin-bottom: @font-size * @line-height * @margin-after;
+  .ms-size(@scale, @line-height);
+  margin-top: @calculated-font-size * @margin-before * 1rem;
+  margin-bottom: @calculated-font-size * @margin-after * 1rem;
+}
+
+.testm2 {
+  .ms(-2);
+}
+.testm1 {
+  .ms(-1);
+}
+.test0 {
+  .ms(0);
+}
+.test1 {
+  .ms(1);
+}
+.test2 {
+  .ms(2);
+}
+.test3 {
+  .ms(3);
+}
+.test4 {
+  .ms(4);
+}
+.test5 {
+  .ms(5);
+}
+.test6 {
+  .ms(6);
 }
 
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: @serif;
+  font-family: @sans;
   font-weight: @header-weight;
 
   span {
@@ -42,43 +70,33 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-h1 {
-  font-family: @accent-font;
-}
-
-body {
-  font-family: @sans;
+html, body {
+  font-family: @serif;
   font-weight: @body-weight;
   font-size: @base-font-size;
   line-height: @base-font-size * @base-line-height;
   -webkit-font-smoothing: antialiased;
 }
 
-em {
-  font-family: @serif;
-}
-
 p  { .ms(0, 0, 0); }
-h1 { .ms(4, 1, 1); }
-h2 { .ms(3, 2, 1); }
-h3 { .ms(2, 1, 0); }
-h4 { .ms(1, 1, 0); }
-h5 { .ms(0, 0, 0); }
+h1 { .ms(5, 1, 0.3); }
+h2 { .ms(4, 1, 0.2); }
+h3 { .ms(3, 1, 0); }
+h4 { .ms(2, 1, 0); }
+h5 { .ms(1, 1, 0); }
+h6 { .ms(0, 1, 0); }
 
-@media print {
-  @print-font-size: 11px;
-  @print-scale-factor: 1.22;
-  body {
-    font-size: @print-font-size;
-    line-height: @print-font-size * @base-line-height;
-  }
-  p  { .ms(0, 0, 0, @print-font-size, @base-line-height, @print-scale-factor); }
-  h1 { .ms(5, 1, 1, @print-font-size, @base-line-height, @print-scale-factor); }
-  h2 { .ms(2, 2, 0, @print-font-size, @base-line-height, @print-scale-factor); }
-  h3 { .ms(1, 1, 0, @print-font-size, @base-line-height, @print-scale-factor); }
-  h4 { .ms(0, 0, 0, @print-font-size, @base-line-height, @print-scale-factor); }
-  h5 { .ms(0, 0, 0, @print-font-size, @base-line-height, @print-scale-factor); }
-  ul {
-    margin-top: 0;
+@media @tablet {
+  html, body {
+    font-size: @base-font-size - 1px;
+    line-height: (@base-font-size - 1px) * @base-line-height;
   }
 }
+
+@media @mobile {
+  html, body {
+    font-size: @base-font-size - 2px;
+    line-height: (@base-font-size - 2px) * @base-line-height;
+  }
+}
+
