@@ -15,7 +15,8 @@ app.configure(function(){
 
   app.locals.year = new Date().getFullYear();
   app.locals.moment = require('moment');
-  app.blog = new Blog(__dirname + '/blog-posts');
+  app.locals.handleize = Blog.handleize;
+  app.blog = new Blog(__dirname + '/blog-posts', { flat: true, watch: true });
 });
 
 app.configure('development', function(){

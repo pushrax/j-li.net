@@ -36,11 +36,11 @@ module.exports = function(app) {
     respond(req, res, 'resume');
   });
 
-  app.get('/blog', function(req, res) {
+  app.get('/posts', function(req, res) {
     respond(req, res, 'blog', { page: 0, posts: app.blog.posts(0, 10), postCount: app.blog.postCount() });
   });
 
-  app.get('/blog/:page([0-9]+)', function(req, res, next) {
+  app.get('/posts/:page([0-9]+)', function(req, res, next) {
     var page = parseInt(req.param('page')) - 1;
     if (!page) return next();
 
@@ -50,7 +50,7 @@ module.exports = function(app) {
     respond(req, res, 'blog', { title: 'Page ' + (page + 1) + ' » blog', page: page, posts: posts, postCount: app.blog.postCount() });
   });
 
-  app.get('/blog/tag/:tag', function(req, res, next) {
+  app.get('/posts/tag/:tag', function(req, res, next) {
     var tag = req.param('tag');
 
     var posts = app.blog.postsForTag(tag);
@@ -59,7 +59,7 @@ module.exports = function(app) {
     respond(req, res, 'blog', { title: tag + ' » blog', tag: tag, page: 0, posts: posts, postCount: app.blog.postCountForTag(tag) });
   });
 
-  app.get('/blog/tag/:tag/:page([0-9]+)', function(req, res, next) {
+  app.get('/posts/tag/:tag/:page([0-9]+)', function(req, res, next) {
     var tag = req.param('tag');
 
     var page = parseInt(req.param('page'), 10) - 1;
@@ -71,19 +71,19 @@ module.exports = function(app) {
     respond(req, res, 'blog', { title: tag + ', Page ' + (page + 1) + ' » blog', tag: tag, page: page, posts: posts, postCount: app.blog.postCountForTag(tag) });
   });
 
-  app.get('/blog/:year([0-9]+)/:month([0-9]+)/:day([0-9]+)/:name', function(req, res, next) {
-    var post = app.blog.post(req.param('year'), req.param('month'), req.param('day'), req.param('name'));
-    if (!post) return next();
-
-    respond(req, res, 'blog_post', { title: post.title + ' » blog', post: post });
-  });
-
   app.get('/blog/rss', function(req, res) {
     //res.header('Content-Type', 'application/rss+xml');
     res.render('blog_rss', { posts: app.blog.posts() }, function(err, result) {
       res.contentType('xml');
       res.send(result);
     });
+  });
+
+  app.get('/posts/:name', function(req, res, next) {
+    var post = app.blog.post(req.param('name'));
+    if (!post) return next();
+
+    respond(req, res, 'blog_post', { title: post.title + ' » blog', post: post });
   });
 
   app.use(function(req, res, next) {

@@ -27,13 +27,21 @@
   }
 
   .name {
-    .ms-size(8, 1);
+    .ms-size(9, 1);
     margin: 0;
     color: @faded-mid-light;
     text-shadow: 1px 1px 0 @faded-mid;
   }
 
   @media @tablet {
+    padding: 0;
+    .tagline {
+      margin-top: 10px;
+    }
+    .name { .ms-font-size(8); }
+  }
+
+  @media @mobile {
     padding: 0;
     .tagline {
       margin-top: 10px;

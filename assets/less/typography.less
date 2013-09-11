@@ -1,7 +1,7 @@
 @base-font-size: 18px;
 @base-line-height: 1.5;
 //@scale-factor: 1.588;
-@scale-factor: 1.618;
+@scale-factor: 1.55;
 //@scale-factor: 1.388;
 
 .ms-font-size (@scale, @scale-factor: @scale-factor) when (mod(@scale, 2) = 1) {
@@ -31,35 +31,6 @@
   margin-top: @calculated-font-size * @margin-before * 1rem;
   margin-bottom: @calculated-font-size * @margin-after * 1rem;
 }
-
-.testm2 {
-  .ms(-2);
-}
-.testm1 {
-  .ms(-1);
-}
-.test0 {
-  .ms(0);
-}
-.test1 {
-  .ms(1);
-}
-.test2 {
-  .ms(2);
-}
-.test3 {
-  .ms(3);
-}
-.test4 {
-  .ms(4);
-}
-.test5 {
-  .ms(5);
-}
-.test6 {
-  .ms(6);
-}
-
 
 h1, h2, h3, h4, h5, h6 {
   font-family: @sans;

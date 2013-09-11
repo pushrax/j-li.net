@@ -34,8 +34,7 @@ header {
   .inner { .row; }
 
   li {
-    .column(2);
-    @media @tablet { .column(3); }
+    .column(3);
   }
   a {
     display: block;
@@ -64,7 +63,7 @@ header {
     }
   }
   li.name {
-    .column(6);
+    .column(3);
     a {
       .ms-font-size(2);
       text-shadow: 0 1px 0 darken(@faded-dark, 12%);
@@ -89,11 +88,8 @@ header {
         padding-right: 10px;
       }
 
-      @media @laptop {
-        padding-left: 20px;
-      }
       @media @tablet {
-        i { display: none; }
+        padding-left: 20px;
       }
       @media @mobile {
         padding-left: 10px;
@@ -176,6 +172,8 @@ body.index header {
 // Tab-specific colours
 body.projects header .projects,
 body.music header .music,
+body.blog header .blog,
+body.blog_post header .blog,
 body.resume header .resume {
   a {
     color: @background;
@@ -194,6 +192,11 @@ header {
     div { background-color: @magenta; }
     i { color: @magenta; }
     &:hover i { color: lighten(@magenta, 10%); }
+  }
+  .blog a {
+    div { background-color: @blue; }
+    i { color: @blue; }
+    &:hover i { color: lighten(@blue, 10%); }
   }
   .resume a {
     div { background-color: @blue; }

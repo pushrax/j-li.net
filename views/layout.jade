@@ -13,6 +13,10 @@ else
           title #{title} » Justin Li
 
       meta(name='viewport', content='width=device-width, initial-scale=1.0')
+      block metadata
+      meta(name='author', content="Justin Li, jli@j-li.net")
+      link(rel='author', href='https://plus.google.com/113891896641831131136')
+
       script(type='text/javascript', src='//use.typekit.net/cyu4ujf.js')
       script
         try{Typekit.load();}catch(e){}
@@ -24,7 +28,6 @@ else
           .container
             ul.inner
               li.name: a.ajax(href='/'): span.wrapper
-                i.icon-home
                 span.name Justin Li
               li.projects: a.ajax(href='/projects')
                 i.icon-rocket
@@ -34,9 +37,9 @@ else
                 i.icon-music
                 span.title music
                 div
-              li.resume: a.ajax(href='/resume')
-                i.icon-briefcase
-                span.title résumé
+              li.blog: a.ajax(href='/posts')
+                i.icon-quote-left
+                span.title web log
                 div
 
         #content

@@ -1,0 +1,10 @@
+span.date #{moment(post.date).fromNow()}
+span.tags
+  - if (post.meta.tags.length > 0)
+    |  in 
+    each tag, index in post.meta.tags
+      a.ajax(href='/posts/tag/' + handleize(tag))= tag
+      - if (index < post.meta.tags.length - 2)
+        | , 
+      - else if (index == post.meta.tags.length - 2)
+        |  and 

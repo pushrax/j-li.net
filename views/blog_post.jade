@@ -3,17 +3,13 @@ extends layout
 block content
   section#blog
     article#blog-post
-      h1= post.title
-      div.meta
-        span.date Posted #{moment(post.date).fromNow()}
-        span.tags
-          - if (post.meta.tags.length > 0)
-            |  in 
-            each tag, index in post.meta.tags
-              a(href='/blog/tag/' + tag)= tag
-              - if (index < post.meta.tags.length - 2)
-                | , 
-              - else if (index == post.meta.tags.length - 2)
-                |  and 
+      .heading
+        if post.meta.image
+          img(src=post.meta.image)
+        h1= post.title
+        if post.meta.subtitle
+          h3.subtitle= post.meta.subtitle
+        .meta
+          include blog_metadata
 
-      p.body !{post.html}
+      .body !{post.html}
