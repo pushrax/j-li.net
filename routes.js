@@ -83,7 +83,7 @@ module.exports = function(app) {
     var post = app.blog.post(req.param('name'));
     if (!post) return next();
 
-    respond(req, res, 'blog_post', { title: post.title + ' » blog', post: post });
+    respond(req, res, 'blog_post', { title: post.title + ' » blog', post: post, path: '/posts/' + req.param('name') });
   });
 
   app.use(function(req, res, next) {
