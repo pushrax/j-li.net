@@ -13,8 +13,8 @@ else
           title #{title} » Justin Li
 
       meta(name='viewport', content='width=device-width, initial-scale=1.0')
-      block metadata
       meta(name='author', content="Justin Li, jli@j-li.net")
+      block metadata
       link(rel='author', href='https://plus.google.com/113891896641831131136')
 
       script(type='text/javascript', src='//use.typekit.net/cyu4ujf.js')
@@ -47,20 +47,18 @@ else
             block content
 
         footer
-          .container
-            .copyright &copy; #{year} 
-              a.name.ajax(href='/') Justin Li
-              |  
-              small
-                a(href='https://github.com/pushrax/j-li.net') open source
-            .contact
-              ul
-                li: a#email-link.ajax(href='/', title='email jli @ this domain')
-                  i.icon-envelope-alt.icon-2x.pull-left
-                li: a(href='http://github.com/pushrax', title='pushrax on Github')
-                  i.icon-github.icon-2x.pull-left
-                li: a(href='http://twitter.com/pushrax', title='@pushrax on Twitter')
-                  i.icon-twitter.icon-2x.pull-left
+          .background
+            .container
+              .copyright: span &copy; #{year} 
+                a.name.ajax(href='/') Justin Li
+              .contact
+                ul
+                  li: a#email-link.ajax(href='/', title='email jli @ this domain')
+                    i.icon-envelope-alt.icon-2x.pull-right
+                  li: a(href='http://twitter.com/pushrax', title='@pushrax on Twitter')
+                    i.icon-twitter.icon-2x.pull-right
+                  li: a(href='http://github.com/pushrax', title='pushrax on Github')
+                    i.icon-github.icon-2x.pull-right
 
       script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js')
       script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')

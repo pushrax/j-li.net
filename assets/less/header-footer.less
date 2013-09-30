@@ -3,7 +3,6 @@ header, footer {
   min-width: @min-width;
   margin: 0;
   padding: 0;
-  background: @faded-dark;
   font-family: @accent-font;
   text-transform: uppercase;
 
@@ -22,6 +21,7 @@ header, footer {
 header {
   line-height: @header-height;
   height: @header-height;
+  background: @faded-dark;
 
   position: fixed;
   top: 0;
@@ -106,14 +106,14 @@ header {
 }
 
 footer {
-  line-height: @header-height;
+  line-height: @header-height * 1.5;
 
   display: table-row;
   position: relative;
   clear: both;
   .clearfix();
+  box-sizing: border-box;
 
-  border-top: 8px solid @orange;
   color: @faded-mid-dark;
 
   a {
@@ -123,20 +123,25 @@ footer {
 
   li {
     padding: 0 1em;
-    @media @tiny {
-      padding: 0 0.5em;
+    @media @tablet {
+      padding: 0 1.5em;
     }
+    @media @tiny {
+      padding: 0 1em;
+    }
+  }
+  border-top: 10px solid @orange;
+  .background {
+    .clearfix();
+    background-color: @faded-dark;
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
 
   .copyright {
     float: left;
-    padding-left: 10px;
-    margin: 0;
-    .ms-font-size(1);
-    small {
-      margin-left: 1em;
-      .ms-font-size(0);
-    }
+    .ms-font-size(2);
   }
   .contact {
     float: right;
@@ -151,6 +156,11 @@ footer {
   }
 
   @media @tablet {
+    .copyright {
+    }
+    .contact {
+      .ms-font-size(1);
+    }
     .contact, .copyright {
       float: none;
       padding: 0;
@@ -159,6 +169,10 @@ footer {
     }
     ul {
       display: inline-block;
+      i {
+        width: 40px;
+        margin: 0!important;
+      }
     }
   }
 }

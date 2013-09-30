@@ -1,5 +1,8 @@
 extends layout
 
+block metadata
+  meta(name='created', content=moment(post.date).format("YYYY-MM-DD"))
+
 block content
   section#blog
     article#blog-post

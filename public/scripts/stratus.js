@@ -7,14 +7,15 @@
   };
   $.stratus = function(settings) {
     var root_url;
-    root_url = settings.env === 'development' ? 'http://example.com:3000' : 'http://stratus.sc';
+    root_url = settings.env === 'development' ? 'http://localhost:3000' : 'http://stratus.sc';
     $('body').append("<div id='stratus'><iframe allowtransparency='true' frameborder='0' scrolling='0'></div>");
     $.stratus.src = root_url + '/player?' + $.param(settings, true) + '&link=' + encodeURIComponent(document.location.href);
     $('#stratus iframe').attr({
       src: $.stratus.src
     });
     $('#stratus iframe').load(function() {
-      $('#wrapper').animate({'padding-bottom': '32px'}, 1000);
+      $("<div>").appendTo('#wrapper').css('height', 0).animate({'height': '32px'}, 1000);
+
       return $(this).css({
         visibility: 'visible'
       });
