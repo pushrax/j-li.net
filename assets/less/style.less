@@ -29,7 +29,17 @@ a {
 }
 
 code, kbd, pre, samp {
-  color: @blue;
+  font-family: @monospace;
+}
+
+code {
+  font-size: 0.85em;
+  color: @faded-mid;
+}
+
+pre code {
+  font-size: 1.0em;
+  color: @foreground;
 }
 
 ul {
