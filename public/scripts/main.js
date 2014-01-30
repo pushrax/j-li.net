@@ -104,7 +104,7 @@ $(document).ready(function() {
       }
       lastScrollTop = scrollTop;
     }
-  })
+  }, 100)
 
   $(window).scroll(function(event) {
     scrolled = true;
