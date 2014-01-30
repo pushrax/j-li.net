@@ -9,6 +9,7 @@ function openPage(path, updateHistory, callback) {
       if (_gaq) {
         _gaq.push(['_trackPageview', path]);
       }
+      $('header').removeClass('hidden');
       $('body').removeClass().addClass(data.view);
       $('#content-wrapper').html(data.html).animate({ opacity: 1 }, 100);
       updateClickHandlers(false);
@@ -83,4 +84,29 @@ $(document).ready(function() {
   SC.initialize({
     client_id: "77272076b9c38d199fad773ce817a2fc"
   });
+
+  var scrolled = false;
+  var lastScrollTop = 0;
+
+  setInterval(function() {
+    if (scrolled) {
+      scrolled = false;
+      var scrollTop = $(window).scrollTop();
+      var scrollBottom = $(document).height() - $(window).height() - scrollTop;
+      if (scrollBottom < 200) {
+        return $('header').removeClass('hidden');
+      }
+      if (Math.abs(scrollTop - lastScrollTop) < 10) return;
+      if (scrollTop > lastScrollTop && scrollTop > 80) {
+        $('header').addClass('hidden');
+      } else {
+        $('header').removeClass('hidden');
+      }
+      lastScrollTop = scrollTop;
+    }
+  })
+
+  $(window).scroll(function(event) {
+    scrolled = true;
+  })
 });
