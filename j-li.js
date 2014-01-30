@@ -1,5 +1,6 @@
 var express = require('express')
-  , Blog = require('blog-base');
+  , Blog = require('blog-base')
+  , highlight = require('highlight.js');
 
 var app = express();
 
@@ -16,7 +17,15 @@ app.configure(function(){
   app.locals.year = new Date().getFullYear();
   app.locals.moment = require('moment');
   app.locals.handleize = Blog.handleize;
-  app.blog = new Blog(__dirname + '/blog-posts', { flat: true, watch: true });
+  app.blog = new Blog(__dirname + '/blog-posts', {
+    flat: true,
+    watch: true,
+    marked: {
+      highlight: function (code) {
+        return highlight.highlightAuto(code).value;
+      }
+    }
+  });
 });
 
 app.configure('development', function(){
