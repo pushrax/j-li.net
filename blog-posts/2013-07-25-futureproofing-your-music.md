@@ -18,7 +18,7 @@ one issue though: that sizable music library consisted entirely of *terribly*
 encoded, badly tagged, 96-160 kbps MP3 files. Maybe the odd LAME 320k or V0
 interspersed for good measure, just to tantalize with its crisp, airy tones.
 
-Of course, I wanted to fix this as soon as humanly possible so I could start
+Of course, I wanted to fix this as soon as possible so I could start
 appreciating my new investment. Fortunately, iTunes had very recently launched
 the “iTunes Plus” format, which was DRM-free and 256k AAC—a pretty decent
 encoding. Most people (myself included) will tell you that, at reasonable

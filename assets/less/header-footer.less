@@ -42,7 +42,7 @@ header {
     text-align: center;
     .transition(color 100ms ease-in-out);
     color: @faded-mid-light;
-    border-bottom: none;
+    text-decoration: none;
     position: relative;
     .ms-font-size(1);
 
@@ -79,7 +79,7 @@ header {
 
       &:hover span.wrapper {
         span {
-          border-bottom: 1px dotted @faded-mid;
+          text-decoration: underline;
         }
         i { color: @background; }
       }
@@ -118,7 +118,6 @@ footer {
 
   a {
     color: @faded-mid;
-    border-bottom: 1px dotted @faded-mid-dark;
   }
 
   li {
@@ -148,6 +147,7 @@ footer {
     padding-right: 2px;
     a {
       color: @faded-mid-dark;
+      text-decoration: none;
       &:hover { color: @background; }
       i {
         margin-top: 2px;

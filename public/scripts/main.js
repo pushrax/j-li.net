@@ -93,7 +93,7 @@ $(document).ready(function() {
       scrolled = false;
       var scrollTop = $(window).scrollTop();
       var scrollBottom = $(document).height() - $(window).height() - scrollTop;
-      if (scrollBottom < 200) {
+      if (scrollBottom < 100) {
         return $('header').removeClass('hidden');
       }
       if (Math.abs(scrollTop - lastScrollTop) < 10) return;

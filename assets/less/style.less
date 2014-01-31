@@ -18,13 +18,17 @@ body {
 a {
   outline: none;
   color: @orange;
-  text-decoration: none;
   .transition(color 100ms ease-out 0s);
-  border-bottom: 1px dotted lighten(@orange, 30%);
+  text-decoration: underline;
 
   &:hover {
     color: @faded-mid-dark;
-    border-bottom-color: @orange;
+  }
+}
+
+h1, h2, h3 {
+  a {
+    text-decoration: none;
   }
 }
 
@@ -38,7 +42,7 @@ code {
 }
 
 pre code {
-  font-size: 0.7em;
+  font-size: 0.8em;
   line-height: 1.5em;
 }
 
