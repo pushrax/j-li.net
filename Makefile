@@ -7,8 +7,8 @@ compile-dev-assets:
 	${LESSC} assets/less/master.less > public/master.css
 
 dev:
-	supervisor -q -n exit -w 'assets' -e 'less' -x make compile-dev-assets &
-	supervisor -q -n error -i 'public,assets' -e 'js|jade' j-li.js
+	./node_modules/.bin/supervisor -q -n exit -w 'assets' -e 'less' -x make compile-dev-assets &
+	./node_modules/.bin/supervisor -q -n error -i 'public,assets' -e 'js|jade' j-li.js
 
 run: compile-assets
 	node j-li.js
