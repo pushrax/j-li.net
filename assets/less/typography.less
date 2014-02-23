@@ -1,7 +1,7 @@
-@base-font-size: 16px;
+@base-font-size: 18px;
 @base-line-height: 1.55;
 //@scale-factor: 1.588;
-@scale-factor: 1.54;
+@scale-factor: 1.50;
 //@scale-factor: 1.388;
 
 .ms-font-size (@scale, @scale-factor: @scale-factor) when (mod(@scale, 2) = 1) {
@@ -50,7 +50,7 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-p  { .ms(0, 0, 0); }
+p  { .ms(0, 1, 0); }
 h1 { .ms(5, 1, 0.3, 1.2); }
 h2 { .ms(4, 1, 0.2); }
 h3 { .ms(3, 1, 0); }

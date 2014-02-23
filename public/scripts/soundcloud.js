@@ -9,7 +9,7 @@ $(document).ready(function() {
       a += '<a href=\'' + tracks[i].permalink_url + '\' class="link">';
       if (tracks[i].artwork_url)
         a += '<img src="' + tracks[i].artwork_url + '">';
-      else a += '<img src="https://a2.sndcdn.com/assets/images/default/cloudx120-1ec56ce9.png" class="image-placeholder">';
+      else a += '<img src="/images/cloudx120.png" class="image-placeholder">';
       a += '</a>';
       a += '<a href=\'' + tracks[i].permalink_url + '\' class="stratus">' + tracks[i].title + '</a>';
       a += '</div>';
