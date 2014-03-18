@@ -6,7 +6,7 @@ tags:
 - nfs
 ---
 
-After upgrading to OS X Mavericks, I was a bit confused when I couldn’t play
+After upgrading to OS X Mavericks, I was a bit confused when I couldn't play
 any Röyksopp off my NFS server. It turns out the ö character was preventing
 reads from completing successfully, but Finder was still able to retrieve a
 directory listing.
@@ -30,6 +30,6 @@ To apply these options as the default for every mount, add the following line to
 ```
 nfs.client.mount.options = nfc,intr
 ```
-After doing that, the regular “Connect to Server” function of Finder will use these options as well.
+After doing that, the regular "Connect to Server" function of Finder will use these options as well.
 See [`man mount_nfs`](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man8/mount_nfs.8.html) for more options.
 
