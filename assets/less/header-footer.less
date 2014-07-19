@@ -23,12 +23,12 @@ header {
   height: @header-height;
   background: @faded-dark;
 
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 1000;
 
-  .box-shadow(0 3px 12px rgba(0, 0, 0, 0.28));
+  // .box-shadow(0 3px 12px rgba(0, 0, 0, 0.28));
   .transition(opacity 350ms ease-in-out, top 300ms cubic-bezier(0.86, 0, 0.07, 1));
 
   .inner { .row; }

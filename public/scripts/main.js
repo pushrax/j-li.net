@@ -85,28 +85,5 @@ $(document).ready(function() {
     client_id: "77272076b9c38d199fad773ce817a2fc"
   });
 
-  var scrolled = false;
-  var lastScrollTop = 0;
-
-  setInterval(function() {
-    if (scrolled) {
-      scrolled = false;
-      var scrollTop = $(window).scrollTop();
-      var scrollBottom = $(document).height() - $(window).height() - scrollTop;
-      if (scrollBottom < 100) {
-        return $('header').removeClass('hidden');
-      }
-      if (Math.abs(scrollTop - lastScrollTop) < 10) return;
-      if (scrollTop > lastScrollTop && scrollTop > 80) {
-        $('header').addClass('hidden');
-      } else {
-        $('header').removeClass('hidden');
-      }
-      lastScrollTop = scrollTop;
-    }
-  }, 100)
-
-  $(window).scroll(function(event) {
-    scrolled = true;
-  })
+  AffixedScroller(document.getElementsByTagName('header')[0]);
 });
