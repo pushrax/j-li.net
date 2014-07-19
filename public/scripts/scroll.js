@@ -37,6 +37,10 @@ AffixedScroller = (function(viewport) {
     }
 
     this.node.style.webkitTransform = translation;
+    this.node.style.MozTransform = translation;
+    this.node.style.msTransform = translation;
+    this.node.style.OTransform = translation;
+    this.node.style.transform = translation;
   };
 
   AffixedScroller.prototype.animate = function(current, target) {
