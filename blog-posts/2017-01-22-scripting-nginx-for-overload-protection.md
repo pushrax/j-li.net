@@ -23,5 +23,5 @@ Related talks:
 
 - [Xavier Denis](https://twitter.com/xldenis) on [Intelligent Load Balancers](https://www.youtube.com/watch?v=WSUEjWgLk30)
 - [Scott Francis](https://twitter.com/planetscott) on [Building an HTTP Request Router With NGINX and Lua](https://www.nginx.com/resources/webinars/building-an-http-request-router-with-nginx-and-lua/)
-- [Florian Weingarten](https://twitter.com/fw42) on [Scaling Shopify's Multitenant Architecture Across Multiple Data Centres](https://www.youtube.com/watch?v=F-f0-k46WVk)
+- [Florian Weingarten](https://twitter.com/fw1729) on [Scaling Shopify's Multitenant Architecture Across Multiple Data Centres](https://www.youtube.com/watch?v=F-f0-k46WVk)
 - [Simon Eskildsen](https://twitter.com/sirupsen) on [Shopify in Multiple Datacenters](https://www.youtube.com/watch?v=7UyDK2bDjc4)
