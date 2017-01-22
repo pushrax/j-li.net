@@ -1,6 +1,6 @@
 ---
 title: Futureproofing Your Music
-subtitle: Why you should demand your library stays lossless.
+subtitle: Why you should insist your library stays lossless.
 tags:
 - music
 - media

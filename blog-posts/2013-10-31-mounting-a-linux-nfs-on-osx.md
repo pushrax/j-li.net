@@ -15,7 +15,7 @@ Apparently Mac OS X doesn't enable support for normalizing UTF-8 file names by
 default. This means that occasionally the representation of a file name on the
 client and server can differ.  Fortunately, this is fixed easily by
 enabling the `nfc` mount option, which tells OS X to normalize NFS paths using
-[NFC](http://en.wikipedia.org/wiki/Unicode_equivalence#Normal_forms).
+Normalization Form Canonical Composition ([NFC](http://en.wikipedia.org/wiki/Unicode_equivalence#Normal_forms)).
 
 The other issue I've been having is that disconnecting from the server
 without first unmounting causes all filesystem operations to stall for 30
