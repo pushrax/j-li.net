@@ -1,124 +1,37 @@
+.index #content-wrapper {
+  padding: 0;
+}
+
+.index footer {
+  display: none;
+}
+
+#front-posts {
+  margin-top: 2em;
+}
+
 #frontpage {
-  padding: 80px 0 30px;
-  text-align: center;
+  padding: 80px 1.5em 30px;
   text-shadow: 0 1px 0 @shadow-color;
 
+  .tagline {
+    margin-bottom: 1em;
+  }
+
   .tagline, .contact {
-    .ms(1, 0, 0);
     text-shadow: 0 1px 0 @shadow-color;
     font-weight: normal;
-    letter-spacing: 0.04em;
-    margin-top: 0.5em;
     color: @faded-mid;
     line-height: 1.4em;
-    span {
-      font-weight: bold;
+    span, a {
       color: @faded-dark;
     }
   }
-  .contact span {
-    color: @orange;
-  }
-  .contact {
-    .transition(background 1400ms);
-  }
-  .contact.highlighted {
-    background: white;
-    .transition(background 10ms);
-  }
-
-  .name {
-    .ms-size(9, 1);
-    margin: 0;
-    color: @faded-mid-light;
-    text-shadow: 1px 1px 0 @faded-mid;
-  }
 
   @media @tablet {
-    padding: 0;
+    padding: 1.5em;
     .tagline {
       margin-top: 10px;
-    }
-    .name { .ms-font-size(8); }
-  }
-
-  @media @mobile {
-    padding: 0;
-    .tagline {
-      margin-top: 10px;
-    }
-    .name { .ms-font-size(7); }
-  }
-
-  .menu {
-    .ms(3, 0, 0);
-
-    text-transform: uppercase;
-    font-family: @accent-font;
-    font-weight: bold;
-    padding: 20px 0 0;
-    text-shadow: 0 1px 0 @shadow-color;
-    text-align: center;
-
-    ul {
-      display: inline-block;
-      list-style: none;
-      padding: 0;
-      margin: 0 auto;
-
-      @media @tablet {
-        display: block;
-        margin-top: 20px;
-        width: auto;
-      }
-    }
-
-    li {
-      @border: 1px dashed fadeout(@foreground, 80%);
-      float: left;
-      margin: 0;
-      position: relative;
-
-      &:after {
-        content: "/";
-        font-weight: 200;
-        font-size: 92%;
-        position: absolute;
-        top: 0px;
-        right: -4px;
-        color: @faded-mid-light;
-      }
-      &:last-child:after {
-        content: "";
-      }
-
-      a {
-        display: block;
-        padding: 0 20px;
-        text-decoration: none;
-        color: @foreground;
-        &:hover { color: @faded-mid-dark; }
-      }
-
-      @media @tablet {
-        float: none;
-        text-align: center;
-        border-left: none;
-        border-top: @border;
-        a {
-          padding: 20px 0;
-        }
-        &:after {
-          content: "";
-        }
-        &:last-child {
-          border-bottom: @border;
-        }
-      }
-
-      &:first-child {
-        border-left: none;
-      }
     }
   }
 }

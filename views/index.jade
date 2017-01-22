@@ -3,21 +3,28 @@ extends layout
 block content
   section#frontpage
     h1.name Justin Li
-    .tagline enthusiast of 
-      span tech
-      |  / 
-      span music 
-      |  / 
-      span food
+    .tagline software engineer / music person / thing builder
     .contact email 
       span jli
       |  &#64; 
       // some comment
       span j-li.net
-      |  &mdash; 
+      |  (
       span: a(href='/pgpkey.asc') pgp
-    .menu
-      ul
-        li: a.ajax(href='/projects') projects
-        li: a.ajax(href='/music') music
-        li: a.ajax(href='/posts') web log
+      | 
+      small 9EE9E9DC
+      | )
+    .contact twitter 
+      span: a(href='https://twitter.com/pushrax') @pushrax
+    .contact github 
+      span: a(href='https://github.com/pushrax') @pushrax
+
+    #front-posts
+      each post in posts
+        - var postUrl = '/posts/' + post.name
+        article.heading
+          h2: a.ajax(href=postUrl)= post.title
+          if post.meta.subtitle
+            h3.subtitle= post.meta.subtitle
+          .meta
+            include blog_metadata

@@ -21,7 +21,7 @@ module.exports = function(app) {
   }
 
   app.get('/', function(req, res) {
-    respond(req, res, 'index');
+    respond(req, res, 'index', { page: 0, posts: app.blog.posts(0, 10), postCount: app.blog.postCount() });
   });
 
   app.get('/projects', function(req, res) {

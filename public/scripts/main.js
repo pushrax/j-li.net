@@ -54,19 +54,23 @@ function updateClickHandlers(globalAjax) {
 
 var initialPopState = false;
 
+/*
 window.onpopstate = function(event) {
   if (initialPopState) return initialPopState = false;
   if (event.state && event.state.substr(0, 14) == 'j-li.net-hist|') {
     openPage(event.state.substr(14), false);
   }
 };
+*/
 
 $(document).ready(function() {
+  /*
   if (Modernizr.history) {
     initialPopState = true;
     window.history.replaceState('j-li.net-hist|', 'Title', window.location.pathname);
     updateClickHandlers(true);
   }
+  */
 
   $('#email-link').unbind('click').click(function() {
     openPage($(this).attr("href"), true, function(navigated) {
@@ -85,5 +89,5 @@ $(document).ready(function() {
     client_id: "77272076b9c38d199fad773ce817a2fc"
   });
 
-  AffixedScroller(document.getElementsByTagName('header')[0]);
+  //AffixedScroller(document.getElementsByTagName('header')[0]);
 });
