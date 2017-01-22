@@ -13,7 +13,7 @@ directory listing.
 
 Apparently Mac OS X doesn't enable support for normalizing UTF-8 file names by
 default. This means that occasionally the representation of a file name on the
-client and server can differ.  Fortunately, this is rectified easily by
+client and server can differ.  Fortunately, this is fixed easily by
 enabling the `nfc` mount option, which tells OS X to normalize NFS paths using
 [NFC](http://en.wikipedia.org/wiki/Unicode_equivalence#Normal_forms).
 
