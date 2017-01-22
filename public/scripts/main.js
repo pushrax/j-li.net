@@ -70,7 +70,6 @@ $(document).ready(function() {
     window.history.replaceState('j-li.net-hist|', 'Title', window.location.pathname);
     updateClickHandlers(true);
   }
-  */
 
   $('#email-link').unbind('click').click(function() {
     openPage($(this).attr("href"), true, function(navigated) {
@@ -84,6 +83,7 @@ $(document).ready(function() {
     $(this).blur();
     return false;
   });
+  */
 
   SC.initialize({
     client_id: "77272076b9c38d199fad773ce817a2fc"
