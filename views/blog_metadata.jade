@@ -1,5 +1,5 @@
-span.date #{moment(post.date).fromNow()}
-span.tags
+span.date #{moment(post.date).fromNow()} (#{moment(post.date).format('YYYY-MM-DD')})
+//span.tags
   - if (post.meta.tags.length > 0)
     |  in 
     each tag, index in post.meta.tags

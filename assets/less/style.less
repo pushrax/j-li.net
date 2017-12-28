@@ -1,23 +1,26 @@
 body {
-  background: @background;
   color: @foreground;
+  background-color: @background;
+  background-image: url("/images/GnjL1PH-light.jpg");
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 ::-moz-selection {
-  background: #ff5e99;
+  background: #222;
   color: #fff;
   text-shadow: none;
 }
 
 ::selection {
-  background: #ff5e99;
+  background: #222;
   color: #fff;
   text-shadow: none;
 }
 
 a {
   outline: none;
-  color: @orange;
+  color: @red;
   .transition(color 100ms ease-out 0s);
   text-decoration: underline;
 
@@ -53,11 +56,10 @@ ul {
 }
 
 .name {
-  font-family: @accent-font;
+  font-family: @monospace;
   font-weight: bold;
   text-transform: uppercase;
 }
-
 
 @media print {
   body {

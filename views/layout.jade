@@ -8,14 +8,13 @@ else
       meta(charset='utf-8')
       case title
         when ''
-          title Justin Li
+          title personal home page of Justin Li
         default
           title #{title} » Justin Li
 
       meta(name='viewport', content='width=device-width, initial-scale=1.0')
       meta(name='author', content="Justin Li, jli@j-li.net")
       block metadata
-      link(rel='author', href='https://plus.google.com/113891896641831131136')
 
       script(type='text/javascript', src='//use.typekit.net/ofv7zqa.js')
       script
@@ -25,12 +24,13 @@ else
       block styles
 
     body(class=view)
+      // div(style="position: fixed; color: #def; font-size: 0.7em; line-height: 1em; opacity: 0.3; right: 0") image: serial experiments lain / unknown artist
       #wrapper
         header
           .container
             ul.inner
               li.name: a.ajax(href='/'): span.wrapper
-                span.name Justin Li
+                span.name personal home page of Justin Li
 
         #content
           #content-wrapper.container
@@ -50,14 +50,4 @@ else
                   li: a(href='http://github.com/pushrax', title='pushrax on Github')
                     i.icon-github.icon-2x.pull-right
 
-      script(type='text/javascript')
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-23542419-1']);
-        _gaq.push(['_setDomainName', 'j-li.net']);
-        _gaq.push(['_trackPageview']);
-        (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
       block scripts

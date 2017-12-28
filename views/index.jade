@@ -4,9 +4,9 @@ block content
   section#frontpage
     h1.name Justin Li
     .tagline software engineer / music person / thing builder
-    .contact email 
-      span jli
-      |  &#64; 
+    .contact email me
+      span
+      |  [at] 
       // some comment
       span j-li.net
       |  (
@@ -30,3 +30,17 @@ block content
             h3.subtitle= post.meta.subtitle
           .meta
             include blog_metadata
+
+block styles
+  style
+    ::-moz-selection {
+      background: #fff;
+      color: #000;
+      text-shadow: none;
+    }
+
+    ::selection {
+      background: #fff;
+      color: #000;
+      text-shadow: none;
+    }

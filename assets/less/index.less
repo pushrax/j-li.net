@@ -1,5 +1,44 @@
+body.index {
+  color: white;
+  background-color: black;
+  background-image: url("/images/GnjL1PH-raster3.jpg");
+
+  .name {
+    font-family: @accent-font;
+  }
+
+  #wrapper {
+    .name {
+      text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000 !important;
+    }
+    p, span, div {
+      text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000 !important;
+    }
+  }
+
+  div, span {
+    color: white!important;
+  }
+
+  a {
+    color: #ff9575!important;
+    // color: lighten(@red, 20%) !important;
+    // color: #7fa!important;
+    text-decoration: none;
+    &:hover {
+      color: #fff!important;
+    }
+  }
+}
+
+img.bg {
+  width: 100%; min-width: 640px; position: fixed; min-width: 16in;
+  pointer-events: none;
+}
+
 .index #content-wrapper {
   padding: 0;
+  margin-left: 2%;
 }
 
 .index footer {
