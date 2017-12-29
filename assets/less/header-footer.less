@@ -20,7 +20,10 @@ header, footer {
 @header-color-base: #7fa;
 header {
   height: @header-height;
-  background: black;
+  background: darken(@header-color-base, 68%);
+  background: linear-gradient(darken(@header-color-base, 60%) 50%, darken(@header-color-base, 68%) 50%);
+  background-size: 100% 3px;
+  background-repeat: repeat;
 
   position: absolute;
   top: 0;
@@ -96,18 +99,6 @@ header {
     @media @tablet {
       .column(3);
     }
-  }
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: @header-height;
-    background: linear-gradient(darken(@header-color-base, 64%) 50%, darken(@header-color-base, 68%) 50%);
-    background-size: 100% 3px;
-    background-repeat: repeat;
   }
 }
 
